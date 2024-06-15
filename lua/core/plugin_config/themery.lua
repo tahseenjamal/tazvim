@@ -21,5 +21,6 @@ require("themery").setup({
   livePreview = true, -- Apply theme while browsing. Default to true.
 })
 
+
 vim.api.nvim_set_keymap('n', '<leader>th', ':Themery<CR>', { noremap = true, silent = true })
 
