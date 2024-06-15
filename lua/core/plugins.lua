@@ -14,7 +14,30 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
-  use 'ellisonleao/gruvbox.nvim'
+  
+  -- LSP Configurations
+    use 'neovim/nvim-lspconfig'
+    
+    -- Autocompletion
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+    use 'L3MON4D3/LuaSnip' -- Snippets plugin
+
+    use {
+    'williamboman/nvim-lsp-installer',
+    config = function()
+        require('nvim-lsp-installer').setup {
+            automatic_installation = true,
+        }
+    end
+}
+
+
+  -- use 'ellisonleao/gruvbox.nvim'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
@@ -53,7 +76,6 @@ return require('packer').startup(function(use)
   })
 
 
-  use 'neovim/nvim-lspconfig'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'ThePrimeagen/refactoring.nvim'
   use 'MunifTanjim/nui.nvim'
