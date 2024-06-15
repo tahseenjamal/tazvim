@@ -1,3 +1,20 @@
+-- Function to reload plugins.lua and run :PackerSync
+function ReloadConfigAndSync()
+  -- Source the plugins.lua file
+  vim.cmd("source ~/.config/nvim/lua/core/plugins.lua")
+  -- Run PackerSync
+  vim.cmd("PackerSync")
+end
+
+-- Set up an autocommand to watch for changes to plugins.lua
+vim.cmd([[
+  augroup PackerUserConfig
+    autocmd!
+    autocmd BufWritePost ~/.config/nvim/lua/core/plugins.lua lua ReloadConfigAndSync()
+  augroup end
+]])
+
+
 require("core.keymaps")
 require("core.plugins")
 require("core.plugin_config")
