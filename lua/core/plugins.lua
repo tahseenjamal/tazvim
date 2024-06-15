@@ -15,6 +15,10 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
   
+  -- Copilot plugins
+  use "github/copilot.vim"
+
+
   -- LSP Configurations
     use 'neovim/nvim-lspconfig'
     
