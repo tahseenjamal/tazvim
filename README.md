@@ -6,7 +6,7 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
 
 - **Themery**: A theme management plugin.
 - **Lualine**: A customizable status line.
-- **Nvim-Tree**: A file explorer tree for easy navigation.
+- **Nvim-Tree**: A file explorer tree with a and A for adding file and folder without showing full path.
 - **Telescope**: A powerful fuzzy finder.
 - **ToggleTerm**: Terminal management within Neovim.
 - **Treesitter**: Enhanced syntax highlighting and code parsing.
@@ -18,6 +18,7 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
 - **Language Server**: Added for Golang, Python, C/C++.
 - **Code Action**: Added code action.
 - **Cursor Line**: Cursor under the word
+- **Copilot**: Added copilot for code completion.
 
 ## Installation
 
