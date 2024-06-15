@@ -14,6 +14,10 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
+
+
+  -- Indent lines
+  use "lukas-reineke/indent-blankline.nvim"
   
   -- Copilot plugins
   use "github/copilot.vim"
