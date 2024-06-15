@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
 
+  use 'folke/which-key.nvim'
 
   -- Indent lines
   use "lukas-reineke/indent-blankline.nvim"
