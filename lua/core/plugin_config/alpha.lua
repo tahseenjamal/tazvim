@@ -25,7 +25,7 @@ dashboard.section.buttons.val = {
 }
 
 -- Set footer
-dashboard.section.footer.val = "Welcome to TazVim"
+dashboard.section.footer.val = "Welcome to TazVim, a simple neovim distro"
 
 -- Send config to alpha
 alpha.setup(dashboard.opts)
