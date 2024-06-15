@@ -4,7 +4,7 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
 
 ## Features
 
-- **Gruvbox Theme**: A warm color scheme for a comfortable coding experience.
+- **Themery**: A theme management plugin.
 - **Lualine**: A customizable status line.
 - **Nvim-Tree**: A file explorer tree for easy navigation.
 - **Telescope**: A powerful fuzzy finder.
