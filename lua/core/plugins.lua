@@ -28,13 +28,16 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
     use {
-    'williamboman/nvim-lsp-installer',
-    config = function()
-        require('nvim-lsp-installer').setup {
-            automatic_installation = true,
-        }
-    end
-}
+      'williamboman/nvim-lsp-installer',
+      config = function()
+          require('nvim-lsp-installer').setup {
+              automatic_installation = true,
+          }
+      end
+    }
+
+    use 'nvim-telescope/telescope-ui-select.nvim' -- Optional: for a better code action UI
+
 
 
   -- use 'ellisonleao/gruvbox.nvim'
