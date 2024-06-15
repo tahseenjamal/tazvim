@@ -10,5 +10,5 @@ require("core.plugin_config.treesitter-refactor")
 require("core.plugin_config.noice")
 require('core.plugin_config.alpha')
 require('core.plugin_config.themery')
+require("nvim-surround")
 require('settings.theme')
-
