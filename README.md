@@ -20,6 +20,7 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
 - **Cursor Line**: Cursor under the word
 - **Copilot**: Added copilot for code completion.
 - **Indent Line**: Added Indent line.
+- **Which key**: Added Which-Key to show keybindings with leader key.
 
 ## Installation
 
