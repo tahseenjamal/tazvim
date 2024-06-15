@@ -13,6 +13,7 @@ require('core.plugin_config.alpha')
 require('core.plugin_config.themery')
 require('core.plugin_config.cursorline')
 require('core.plugin_config.lsp-config')
+require('core.plugin_config.indentline')
 
 
 -- Define a function to load the theme
