@@ -15,6 +15,8 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
 - **Treesitter-Refactor**: Code refactoring support.
 - **Noice**: Improved notification management.
 - **Surround**: Simple surround brackets.
+- **Language Server**: Added for Golang, Python, C/C++.
+- **Cursor Line**: Cursor under the word
 
 ## Installation
 
