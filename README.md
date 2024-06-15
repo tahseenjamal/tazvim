@@ -18,10 +18,12 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
 ## Installation
 
 1. **Clone the repository**:
+    ```
     git clone https://github.com/tahseenjamal/tazvim.git ~/.config/nvim
     ```
 
 2. **Run nvim**:
+    ```
     nvim
     ```
 If packer is not installed, it would be automatically installed and then plugins would be downloaded. After that they would be configured. Once this is done, quit nvim and then again start
