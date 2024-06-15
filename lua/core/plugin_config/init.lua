@@ -1,3 +1,4 @@
+
 require("core.plugin_config.gruvbox")
 require("core.plugin_config.lualine")
 require("core.plugin_config.nvim-tree")
@@ -12,5 +13,14 @@ require('core.plugin_config.alpha')
 require('core.plugin_config.themery')
 require('core.plugin_config.cursorline')
 require('core.plugin_config.lsp-config')
-require("nvim-surround")
-require('settings.theme')
+
+
+-- Define a function to load the theme
+local function load_theme()
+  require("settings.theme")
+end
+
+-- Ensure the theme is loaded after Vim has loaded all plugins
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = load_theme,
+})
