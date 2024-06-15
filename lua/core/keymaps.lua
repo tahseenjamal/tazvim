@@ -13,7 +13,7 @@ vim.opt.autowrite = true
 vim.opt.cursorline = true
 vim.opt.autoread = true
 
-vim.opt.tabstop = 2
+vim.opt.tabstop = 4
 vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 vim.opt.expandtab = true
@@ -26,6 +26,6 @@ vim.api.nvim_set_keymap('n', '<leader>bd', ':bd<CR>', { noremap = true, silent =
 vim.api.nvim_set_keymap('n', '<leader>ba', ':bufdo bd<CR>', { noremap = true, silent = true })
 
 
--- Code Action 
+-- Code Action LSP
 vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap=true, silent=true })
 
