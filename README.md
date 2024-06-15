@@ -1,6 +1,6 @@
 # Tazvim
 
-Tazvim is a lightweight and customizable Neovim configuration written in Lua, inspired by nvchad. This configuration is designed to be minimal yet powerful, providing an efficient coding environment with an elegant user interface.
+Tazvim is a lightweight and customizable Neovim configuration written in Lua, inspired by LazyVim. This configuration is designed to be minimal yet powerful, providing an efficient coding environment with an elegant user interface.
 
 ## Features
 
@@ -14,6 +14,7 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
 - **Lazygit**: Git integration.
 - **Treesitter-Refactor**: Code refactoring support.
 - **Noice**: Improved notification management.
+- **Surround**: Simple surround brackets.
 
 ## Installation
 
