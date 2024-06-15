@@ -17,6 +17,7 @@ dashboard.section.header.val = {
 
 -- Center align the buttons with spaces
 dashboard.section.buttons.val = {
+    dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
     dashboard.button(" f ", "    Find file", ":Telescope find_files<CR>"),
     dashboard.button(" r ", "    Recents", ":Telescope oldfiles<CR>"),
     dashboard.button(" s ", "    Settings", ":Telescope find_files cwd=~/.config/nvim<CR>"),
