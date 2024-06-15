@@ -26,3 +26,6 @@ vim.api.nvim_set_keymap('n', '<leader>bd', ':bd<CR>', { noremap = true, silent =
 vim.api.nvim_set_keymap('n', '<leader>ba', ':bufdo bd<CR>', { noremap = true, silent = true })
 
 
+-- Code Action 
+vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap=true, silent=true })
+
