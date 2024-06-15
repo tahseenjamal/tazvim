@@ -17,7 +17,7 @@ vim.cmd([[
 
 require("core.keymaps")
 require("core.plugins")
-require("core.plugin_config")
+pcall(require, "core.plugin_config")
 
 -- Automatically clear search highlights after searching
 vim.api.nvim_exec([[
