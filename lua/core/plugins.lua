@@ -62,12 +62,11 @@ return require('packer').startup(function(use)
     requires = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' }
   }
 
-  use "kylechui/nvim-surround"
-
   use {
   'goolord/alpha-nvim',
   requires = { 'nvim-lua/plenary.nvim' }
   }
+  use 'yamatsum/nvim-cursorline'
 
   use 'zaldih/themery.nvim'
   -- Themes
