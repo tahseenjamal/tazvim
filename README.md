@@ -112,19 +112,19 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
 
 6. **For Lazygit**:
 
-For Linux you can use below
+    For Linux you can use below
 
-    ```
-    sudo add-apt-repository ppa:lazygit-team/release
-    sudo apt-get update
-    sudo apt-get install lazygit
-    ```
+        ```
+        sudo add-apt-repository ppa:lazygit-team/release
+        sudo apt-get update
+        sudo apt-get install lazygit
+        ```
 
-For Mac you can use below
+    For Mac you can use below
 
-    ````
-    brew install lazygit
-    ```
+        ````
+        brew install lazygit
+        ```
 
 If packer.nvim is not installed, it will be automatically installed. Following that, the required plugins will be downloaded and configured. Once this process is complete, you should quit Neovim and then start it again to ensure all configurations are applied correctly.
 
