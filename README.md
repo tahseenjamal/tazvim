@@ -33,7 +33,9 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
     ```
 
 2.  **Run nvim**:
-    `    nvim`
+    ```
+    nvim
+    ```
 
 ### Please install dependencies of go formating, python formating, and c/c++ formating using the following commands:
 
@@ -71,30 +73,27 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
    go get github.com/fatih/motion@latest
    go get github.com/kisielk/errcheck@latest
    go get github.com/jstemmer/got
-
    ```
 
 2. **For Python**:
 
    ```
     npm install -g pyright
-
    ```
 
 3. **For C/C++**:
+
    ```
    sudo apt-get install clangd
    ```
+
 4. **For Prettier**:
+
    ```
    npm install -g prettier
    ```
-5. **For Copilot**:
-   ```
-    npm install -g @github/copilot
-   ```
-6. **For Lazygit**:
 
+5. **For Lazygit**:
    ```
    sudo add-apt-repository ppa:lazygit-team/release
    sudo apt-get update
