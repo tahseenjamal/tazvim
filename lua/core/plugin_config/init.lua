@@ -1,5 +1,5 @@
 
-require("core.plugin_config.gruvbox")
+-- require("core.plugin_config.gruvbox")
 require("core.plugin_config.lualine")
 require("core.plugin_config.nvim-tree")
 require("core.plugin_config.telescope")
@@ -19,12 +19,16 @@ require('core.plugin_config.null-ls')
 require('core.plugin_config.autopairs')
 
 
--- Define a function to load the theme
-local function load_theme()
-  require("settings.theme")
-end
 
--- Ensure the theme is loaded after Vim has loaded all plugins
+
+-- Ensure the theme and cursorline are set correctly after all plugins are loaded
 vim.api.nvim_create_autocmd("VimEnter", {
-  callback = load_theme,
+  pattern = "*",
+  callback = function()
+  vim.opt.cursorline = true
+  end,
 })
+
+vim.defer_fn(function()
+    require("settings.theme")
+end, 1)
