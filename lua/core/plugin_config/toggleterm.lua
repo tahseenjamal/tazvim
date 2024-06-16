@@ -25,8 +25,17 @@ require('toggleterm').setup({
 })
 
 
+-- Terminal optimization
+vim.api.nvim_exec([[
+  augroup TerminalOptimization
+    autocmd!
+    autocmd TermOpen * setlocal lazyredraw
+    autocmd TermClose * setlocal nolazyredraw
+  augroup END
+]], false)
+
 
 
 -- Keybindings for toggleterm
 vim.api.nvim_set_keymap('n', '<leader>ft', '<Cmd>ToggleTerm direction=float<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<leader>ft', '<Cmd>ToggleTerm<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<leader>ft', '<Cmd>ToggleTerm direction=float<CR>', { noremap = true, silent = true })
