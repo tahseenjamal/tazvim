@@ -15,7 +15,7 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
 - **Treesitter-Refactor**: Code refactoring support.
 - **Noice**: Improved notification management.
 - **Surround**: Simple surround brackets.
-- **Language Server**: Added for Golang, Python, C/C++.
+- **Language Server**: Added for Golang, Python, C/C++, Rust.
 - **Code Action**: Added code action.
 - **Cursor Line**: Cursor under the word
 - **Copilot**: Added copilot for code completion.
@@ -84,36 +84,65 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
 
 3. **For C/C++**:
 
+   For Linux you can use below
+
    ```
    sudo apt-get install clangd
    ```
 
-4. **For Prettier**:
+   For Mac you can use below
+
+   ```
+   brew install clangd
+   ```
+
+4. **For Rust**:
+
+   Install rust-init and then do standard installation, which would install all the required tools. Once done, run below command.
+
+   ```
+   rustup component add rust-analyzer
+   ```
+
+5. **For Prettier**:
 
    ```
    npm install -g prettier
    ```
 
-5. **For Lazygit**:
-   ```
-   sudo add-apt-repository ppa:lazygit-team/release
-   sudo apt-get update
-   sudo apt-get install lazygit
-   ```
+6. **For Lazygit**:
+
+For Linux you can use below
+
+    ```
+    sudo add-apt-repository ppa:lazygit-team/release
+    sudo apt-get update
+    sudo apt-get install lazygit
+    ```
+
+    For Mac you can use below
+
+    ````
+    brew install lazygit
+    ```
 
 If packer.nvim is not installed, it will be automatically installed. Following that, the required plugins will be downloaded and configured. Once this process is complete, you should quit Neovim and then start it again to ensure all configurations are applied correctly.
 
-               .___________.     ___       ________  ____    ____  __  .___  ___.
-               |           |    /   \     |       /  \   \  /   / |  | |   \/   |
-               `---|  |----`   /  ^  \    `---/  /    \   \/   /  |  | |  \  /  |
-                   |  |       /  /_\  \      /  /      \      /   |  | |  |\/|  |
-                   |  |      /  _____  \    /  /----.   \    /    |  | |  |  |  |
-                   |__|     /__/     \__\  /________|    \__/     |__| |__|  |__|
+            .___________.     ___       ________  ____    ____  __  .___  ___.
+            |           |    /   \     |       /  \   \  /   / |  | |   \/   |
+            `---|  |----`   /  ^  \    `---/  /    \   \/   /  |  | |  \  /  |
+                |  |       /  /_\  \      /  /      \      /   |  | |  |\/|  |
+                |  |      /  _____  \    /  /----.   \    /    |  | |  |  |  |
+                |__|     /__/     \__\  /________|    \__/     |__| |__|  |__|
 
 ## About
 
-I have been using VIM from a very long time and didn't want to migrate to another editor with a lot of change in the keymaps. So I put together a very simple setup that can be easily used by anyone who is new to NeoVim configuration or is someone who is trying to switch from VIM to NeoVim. This setup is very minimal and has only the necessary plugins that are required for a good coding experience.
+Having used VIM for a long time, I wanted to maintain a familiar feel while transitioning to a new editor. To achieve this, I created a straightforward NeoVim setup that’s ideal for both newcomers to NeoVim and those switching from VIM. This minimal configuration includes only the essential plugins, ensuring a smooth and efficient coding experience without unnecessary complexity.
 
 ## License
 
 This project is licensed under the MIT License.
+
+```
+
+```
