@@ -20,6 +20,10 @@ return require('packer').startup(function(use)
   -- Indent lines
   use "lukas-reineke/indent-blankline.nvim"
   
+  -- Comment plugin
+  use 'numToStr/Comment.nvim'
+  
+
   -- Copilot plugins
   use "github/copilot.vim"
 
