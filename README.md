@@ -50,3 +50,7 @@ If packer.nvim is not installed, it will be automatically installed. Following t
 ## About
 
 I have been using VIM from a very long time and didn't want to migrate to another editor with a lot of change in the keymaps. So I put together a very simple setup that can be easily used by anyone who is new to NeoVim configuration or is someone who is trying to switch from VIM to NeoVim. This setup is very minimal and has only the necessary plugins that are required for a good coding experience.
+
+## License
+
+This project is licensed under the MIT License.
