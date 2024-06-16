@@ -33,6 +33,7 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
     ```
 
 2.  **Run nvim**:
+
     ```
     nvim
     ```
