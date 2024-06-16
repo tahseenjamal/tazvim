@@ -23,17 +23,6 @@ require'nvim-treesitter.configs'.setup {
       --   smart_rename = "<leader>rn",
       -- },
     },
-    navigation = {
-      enable = false,
-      -- Assign keymaps to false to disable them, e.g. `goto_definition = false`.
-      -- keymaps = {
-      --   goto_definition = "gnd",
-      --   list_definitions = "gnD",
-      --   list_definitions_toc = "gO",
-      --   goto_next_usage = "<a-*>",
-      --   goto_previous_usage = "<a-#>",
-      -- },
-    },
   },
 
   incremental_selection = {
@@ -50,47 +39,6 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   },
 
-  textobjects = {
-    select = {
-      enable = true,
-      lookahead = true,
-      keymaps = {
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["ac"] = "@class.outer",
-        ["ic"] = "@class.inner",
-      },
-    },
-    move = {
-      enable = true,
-      set_jumps = true, -- whether to set jumps in the jumplist
-      goto_next_start = {
-        ["]m"] = "@function.outer",
-        ["]]"] = "@class.outer",
-      },
-      goto_next_end = {
-        ["]M"] = "@function.outer",
-        ["]["] = "@class.outer",
-      },
-      goto_previous_start = {
-        ["[m"] = "@function.outer",
-        ["[["] = "@class.outer",
-      },
-      goto_previous_end = {
-        ["[M"] = "@function.outer",
-        ["[]"] = "@class.outer",
-      },
-    },
-    swap = {
-      enable = true,
-      swap_next = {
-        ["<leader>a"] = "@parameter.inner",
-      },
-      swap_previous = {
-        ["<leader>A"] = "@parameter.inner",
-      },
-    },
-  },
 }
 
 
