@@ -13,7 +13,7 @@ require('toggleterm').setup({
   close_on_exit = true,
   shell = vim.o.shell,
   float_opts = {
-    border = 'curved',
+    border = 'rounded',
     winblend = 3,
   },
   on_open = function(term)
@@ -23,6 +23,7 @@ require('toggleterm').setup({
       vim.cmd("set nolazyredraw")
   end,
 })
+
 
 
 -- Terminal optimization
