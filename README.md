@@ -34,7 +34,8 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
     ```
     nvim
     ```
-If packer is not installed, it would be automatically installed and then plugins would be downloaded. After that they would be configured. Once this is done, quit nvim and then again start
+If packer.nvim is not installed, it will be automatically installed. Following that, the required plugins will be downloaded and configured. Once this process is complete, you should quit Neovim and then start it again to ensure all configurations are applied correctly.
+
 
 
            .___________.     ___       ________  ____    ____  __  .___  ___.
