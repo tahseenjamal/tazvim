@@ -1,6 +1,15 @@
-# Tazvim
+            .___________.     ___       ________  ____    ____  __  .___  ___.
+            |           |    /   \     |       /  \   \  /   / |  | |   \/   |
+            `---|  |----`   /  ^  \    `---/  /    \   \/   /  |  | |  \  /  |
+                |  |       /  /_\  \      /  /      \      /   |  | |  |\/|  |
+                |  |      /  _____  \    /  /----.   \    /    |  | |  |  |  |
+                |__|     /__/     \__\  /________|    \__/     |__| |__|  |__|
 
-Tazvim is a lightweight and customizable Neovim configuration written in Lua, inspired by LazyVim. This configuration is designed to be minimal yet powerful, providing an efficient coding environment with an elegant user interface.
+TazVim is a lightweight and customizable Neovim configuration, inspired by LazyVim. This configuration is designed to be minimal yet powerful, providing an efficient coding environment with an elegant user interface.
+
+## Prerequisites
+
+You should have neovim installed on your system along with git, npm, python3, C/C++ compiler, and Rust compiler.
 
 ## Features
 
@@ -40,77 +49,77 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
 
 ### Please install dependencies of go formating, python formating, and c/c++ formating using the following commands:
 
-1. **For Golang**:
+1.  **For Golang**:
 
-   ```
-   go get golang.org/x/tools/gopls@latest
-   go get github.com/go-delve/delve/cmd/dlv@latest
-   go get github.com/fatih/gomodifytags@latest
-   go get github.com/cweill/gotests/gotests@latest
-   go get github.com/josharian/impl@latest
-   go get github.com/haya14busa/goplay/cmd/goplay@latest
-   go get github.com/go-delve/delve/cmd/dlv@latest
-   go get github.com/davidrjenni/reftools/cmd/fillstruct@latest
-   go get github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest
-   go get github.com/ramya-rao-a/go-outline@latest
-   go get github.com/acroca/go-symbols@latest
-   go get golang.org/x/tools/cmd/guru@latest
-   go get golang.org/x/tools/cmd/gorename@latest
-   go get github.com/cweill/gotests/gotests@latest
-   go get github.com/fatih/gomodifytags@latest
-   go get github.com/josharian/impl@latest
-   go get github.com/haya14busa/goplay/cmd/goplay@latest
-   go get github.com/go-delve/delve/cmd/dlv@latest
-   go get github.com/davidrjenni/reftools/cmd/fillstruct@latest
-   go get github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest
-   go get github.com/ramya-rao-a/go-outline@latest
-   go get github.com/acroca/go-symbols@latest
-   go get golang.org/x/tools/cmd/guru@latest
-   go get golang.org/x/tools/cmd/gorename@latest
-   go get github.com/jstemmer/gotags@latest
-   go get golang.org/x/tools/cmd/godoc@latest
-   go get github.com/zmb3/gogetdoc@latest
-   go get golang.org/x/lint/golint@latest
-   go get github.com/fatih/motion@latest
-   go get github.com/kisielk/errcheck@latest
-   go get github.com/jstemmer/got
-   ```
+    ```
+    go get golang.org/x/tools/gopls@latest
+    go get github.com/go-delve/delve/cmd/dlv@latest
+    go get github.com/fatih/gomodifytags@latest
+    go get github.com/cweill/gotests/gotests@latest
+    go get github.com/josharian/impl@latest
+    go get github.com/haya14busa/goplay/cmd/goplay@latest
+    go get github.com/go-delve/delve/cmd/dlv@latest
+    go get github.com/davidrjenni/reftools/cmd/fillstruct@latest
+    go get github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest
+    go get github.com/ramya-rao-a/go-outline@latest
+    go get github.com/acroca/go-symbols@latest
+    go get golang.org/x/tools/cmd/guru@latest
+    go get golang.org/x/tools/cmd/gorename@latest
+    go get github.com/cweill/gotests/gotests@latest
+    go get github.com/fatih/gomodifytags@latest
+    go get github.com/josharian/impl@latest
+    go get github.com/haya14busa/goplay/cmd/goplay@latest
+    go get github.com/go-delve/delve/cmd/dlv@latest
+    go get github.com/davidrjenni/reftools/cmd/fillstruct@latest
+    go get github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest
+    go get github.com/ramya-rao-a/go-outline@latest
+    go get github.com/acroca/go-symbols@latest
+    go get golang.org/x/tools/cmd/guru@latest
+    go get golang.org/x/tools/cmd/gorename@latest
+    go get github.com/jstemmer/gotags@latest
+    go get golang.org/x/tools/cmd/godoc@latest
+    go get github.com/zmb3/gogetdoc@latest
+    go get golang.org/x/lint/golint@latest
+    go get github.com/fatih/motion@latest
+    go get github.com/kisielk/errcheck@latest
+    go get github.com/jstemmer/got
+    ```
 
-2. **For Python**:
+2.  **For Python**:
 
-   ```
-    npm install -g pyright
-   ```
+    ```
+     npm install -g pyright
+    ```
 
-3. **For C/C++**:
+3.  **For C/C++**:
 
-   For Linux you can use below
+    For Linux you can use below
 
-   ```
-   sudo apt-get install clangd
-   ```
+    ```
+    sudo apt-get install clangd
+    ```
 
-   For Mac you can use below
+    For Mac you can use below
 
-   ```
-   brew install clangd
-   ```
+    ```
+    brew install clangd
+    ```
 
-4. **For Rust**:
+4.  **For Rust**:
 
-   Install rust-init and then do standard installation, which would install all the required tools. Once done, run below command.
+    Install rust-init and then do standard installation, which would install all the required tools. Once done, run below command.
 
-   ```
-   rustup component add rust-analyzer
-   ```
+    ```
+    rustup component add rust-analyzer
+    ```
 
-5. **For Prettier**:
+5.  **For Prettier**:
 
-   ```
-   npm install -g prettier
-   ```
+    ```
+    npm install -g prettier
+    ```
 
-6. **For Lazygit**:
+6.  **For Lazygit**:
 
     For Linux you can use below
 
@@ -125,15 +134,6 @@ Tazvim is a lightweight and customizable Neovim configuration written in Lua, in
         ````
         brew install lazygit
         ```
-
-If packer.nvim is not installed, it will be automatically installed. Following that, the required plugins will be downloaded and configured. Once this process is complete, you should quit Neovim and then start it again to ensure all configurations are applied correctly.
-
-            .___________.     ___       ________  ____    ____  __  .___  ___.
-            |           |    /   \     |       /  \   \  /   / |  | |   \/   |
-            `---|  |----`   /  ^  \    `---/  /    \   \/   /  |  | |  \  /  |
-                |  |       /  /_\  \      /  /      \      /   |  | |  |\/|  |
-                |  |      /  _____  \    /  /----.   \    /    |  | |  |  |  |
-                |__|     /__/     \__\  /________|    \__/     |__| |__|  |__|
 
 ## About
 
