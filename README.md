@@ -120,7 +120,7 @@ For Linux you can use below
     sudo apt-get install lazygit
     ```
 
-    For Mac you can use below
+For Mac you can use below
 
     ````
     brew install lazygit
