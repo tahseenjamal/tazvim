@@ -15,6 +15,9 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
 
+  -- Auto pairs
+  use 'windwp/nvim-autopairs'
+
   use 'folke/which-key.nvim'
 
   -- Indent lines
