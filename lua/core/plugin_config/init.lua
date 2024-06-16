@@ -16,6 +16,7 @@ require('core.plugin_config.lsp-config')
 require('core.plugin_config.indentline')
 require('core.plugin_config.which-key')
 require('core.plugin_config.comment')
+require('core.plugin_config.null-ls')
 
 
 -- Define a function to load the theme
