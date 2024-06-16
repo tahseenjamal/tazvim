@@ -14,6 +14,6 @@ null_ls.setup({
 vim.cmd([[
   augroup FormatAutogroup
     autocmd!
-    autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.json,*.html,*.css,*.md,*.go *.py lua vim.lsp.buf.format { async = true }
+    autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.json,*.html,*.css,*.md,*.go,*.py lua vim.lsp.buf.format { async = true }
   augroup END
 ]])
