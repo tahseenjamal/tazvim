@@ -20,6 +20,7 @@ require('core.plugin_config.which-key')
 require('core.plugin_config.comment')
 require('core.plugin_config.autopairs')
 require('core.plugin_config.gitsigns')
+require('core.plugin_config.lsp-mason-config')
 
 
 
