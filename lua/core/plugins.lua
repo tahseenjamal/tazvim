@@ -15,6 +15,9 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
 
+  -- Bufferline
+  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+
   -- Auto pairs
   use 'windwp/nvim-autopairs'
 
@@ -25,6 +28,9 @@ return require('packer').startup(function(use)
   
   -- Comment plugin
   use 'numToStr/Comment.nvim'
+  
+  -- Git signs
+  use 'lewis6991/gitsigns.nvim'
   
 
   -- Copilot plugins
