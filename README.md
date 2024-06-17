@@ -50,39 +50,28 @@ You should have neovim installed on your system along with git, npm, python3, C/
 ### Please install dependencies of go formating, python formating, and c/c++ formating using the following commands:
 
 1.  **For Golang**:
-
     ```
-    go get golang.org/x/tools/gopls@latest
-    go get github.com/go-delve/delve/cmd/dlv@latest
-    go get github.com/fatih/gomodifytags@latest
-    go get github.com/cweill/gotests/gotests@latest
-    go get github.com/josharian/impl@latest
-    go get github.com/haya14busa/goplay/cmd/goplay@latest
-    go get github.com/go-delve/delve/cmd/dlv@latest
-    go get github.com/davidrjenni/reftools/cmd/fillstruct@latest
-    go get github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest
-    go get github.com/ramya-rao-a/go-outline@latest
     go get github.com/acroca/go-symbols@latest
-    go get golang.org/x/tools/cmd/guru@latest
-    go get golang.org/x/tools/cmd/gorename@latest
     go get github.com/cweill/gotests/gotests@latest
-    go get github.com/fatih/gomodifytags@latest
-    go get github.com/josharian/impl@latest
-    go get github.com/haya14busa/goplay/cmd/goplay@latest
-    go get github.com/go-delve/delve/cmd/dlv@latest
     go get github.com/davidrjenni/reftools/cmd/fillstruct@latest
-    go get github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest
-    go get github.com/ramya-rao-a/go-outline@latest
-    go get github.com/acroca/go-symbols@latest
-    go get golang.org/x/tools/cmd/guru@latest
-    go get golang.org/x/tools/cmd/gorename@latest
+    go get github.com/fatih/gomodifytags@latest
+    go get github.com/fatih/motion@latest
+    go get github.com/go-delve/delve/cmd/dlv@latest
+    go get github.com/haya14busa/goplay/cmd/goplay@latest
+    go get github.com/josharian/impl@latest
+    go get github.com/jstemmer/got
     go get github.com/jstemmer/gotags@latest
-    go get golang.org/x/tools/cmd/godoc@latest
+    go get github.com/kisielk/errcheck@latest
+    go get github.com/ramya-rao-a/go-outline@latest
+    go get github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest
     go get github.com/zmb3/gogetdoc@latest
     go get golang.org/x/lint/golint@latest
-    go get github.com/fatih/motion@latest
-    go get github.com/kisielk/errcheck@latest
-    go get github.com/jstemmer/got
+    go get golang.org/x/tools/cmd/godoc@latest
+    go get golang.org/x/tools/cmd/gorename@latest
+    go get golang.org/x/tools/cmd/gorename@latest
+    go get golang.org/x/tools/cmd/guru@latest
+    go get golang.org/x/tools/cmd/guru@latest
+    go get golang.org/x/tools/gopls@latest
     ```
 
 2.  **For Python**:
