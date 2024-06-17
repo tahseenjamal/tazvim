@@ -14,7 +14,6 @@ vim.cmd([[
   augroup end
 ]])
 
-
 require("core.keymaps")
 require("core.plugins")
 pcall(require, "core.plugin_config")
