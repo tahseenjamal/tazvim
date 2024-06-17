@@ -1,3 +1,5 @@
+vim.opt.termguicolors = true
+--
 -- Function to reload plugins.lua and run :PackerSync
 function ReloadConfigAndSync()
   -- Source the plugins.lua file
