@@ -36,6 +36,14 @@ return require('packer').startup(function(use)
   -- Copilot plugins
   use "github/copilot.vim"
 
+ -- Mason and its LSP config
+  use 'williamboman/mason.nvim'
+
+  use {
+    'williamboman/mason-lspconfig.nvim',
+    requires = { 'neovim/nvim-lspconfig' }
+  }
+
 
   -- LSP Configurations
     use 'neovim/nvim-lspconfig'
