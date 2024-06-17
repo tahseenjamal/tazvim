@@ -24,16 +24,3 @@ vim.cmd([[
   augroup END
 ]])
 
--- Custom command to generate tags using gotags
-vim.api.nvim_create_user_command(
-  'GoTags',
-  function(opts)
-    local command = 'gotags ' .. opts.args
-    vim.fn.system(command)
-    print('Generated tags with gotags')
-  end,
-  { nargs = '*' }
-)
-
--- Keybinding to generate tags with :GoTags -R -f tags .
-vim.api.nvim_set_keymap('n', '<leader>gt', ':GoTags -R -f tags .<CR>', { noremap = true, silent = true })
