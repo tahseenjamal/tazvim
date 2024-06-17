@@ -12,10 +12,12 @@ require('core.plugin_config.alpha')
 require('core.plugin_config.themery')
 require('core.plugin_config.cursorline')
 require('core.plugin_config.lsp-config')
+require('core.plugin_config.nvim-cmp')
+require('core.plugin_config.null-ls')
+require('core.plugin_config.gopher')
 require('core.plugin_config.indentline')
 require('core.plugin_config.which-key')
 require('core.plugin_config.comment')
-require('core.plugin_config.null-ls')
 require('core.plugin_config.autopairs')
 
 
