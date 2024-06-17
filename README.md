@@ -50,6 +50,7 @@ You should have neovim installed on your system along with git, npm, python3, C/
 ### Please install dependencies of go formating, python formating, and c/c++ formating using the following commands:
 
 1.  **For Golang**:
+
     ```
     go get github.com/acroca/go-symbols@latest
     go get github.com/cweill/gotests/gotests@latest
