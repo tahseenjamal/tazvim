@@ -32,6 +32,7 @@ You should have neovim installed on your system along with git, npm, python3, C/
 - **Which key**: Added Which-Key to show keybindings with leader key.
 - **Comment**: Added Comment plugin for commenting code.
 - **Prettier**: Added Prettier for code formatting using Null-LS.
+- **AutoPairs**: Added AutoPairs for auto closing brackets.
 - **Bufferline**: Added Bufferline for buffer management.
 - **Gitsigns**: Added Gitsigns for git integration.
 
