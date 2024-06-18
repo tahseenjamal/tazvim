@@ -43,3 +43,4 @@ vim.api.nvim_set_keymap('n', '<leader>bn', ':bn<CR>', { noremap = true, silent =
 -- Code Action LSP
 vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap=true, silent=true })
 
+
