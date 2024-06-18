@@ -27,6 +27,9 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- lspkind icons
+  use 'onsails/lspkind-nvim'
+  
   -- Bufferline
   use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 
