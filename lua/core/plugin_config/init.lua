@@ -36,3 +36,5 @@ vim.api.nvim_create_autocmd("VimEnter", {
 vim.defer_fn(function()
     require("settings.theme")
 end, 1)
+
+
