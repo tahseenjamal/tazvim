@@ -21,6 +21,7 @@ require('core.plugin_config.comment')
 require('core.plugin_config.autopairs')
 require('core.plugin_config.gitsigns')
 require('core.plugin_config.neotree')
+require('core.plugin_config.bufferline')
 
 
 
