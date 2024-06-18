@@ -22,6 +22,7 @@ require('core.plugin_config.autopairs')
 require('core.plugin_config.gitsigns')
 require('core.plugin_config.neotree')
 require('core.plugin_config.bufferline')
+require('core.plugin_config.nvim-window')
 
 
 
