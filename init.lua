@@ -35,4 +35,22 @@ vim.api.nvim_exec([[
   augroup END
 ]], false)
 
+-- Function to switch to buffer by position
+local function switch_to_buffer_by_position(position)
+    local buffers = vim.fn.getbufinfo({ buflisted = 1 })
+    if position <= #buffers then
+        vim.api.nvim_set_current_buf(buffers[position].bufnr)
+    else
+        print("Buffer " .. position .. " does not exist")
+    end
+end
+
+-- Key mappings for Ctrl+1 to Ctrl+9
+for i = 1, 9 do
+    vim.api.nvim_set_keymap('n', '<C-' .. i .. '>', '', {
+        noremap = true,
+        callback = function() switch_to_buffer_by_position(i) end,
+        silent = true
+    })
+end
 
