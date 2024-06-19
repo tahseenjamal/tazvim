@@ -1,4 +1,28 @@
-require("bufferline").setup{}
+
+require("bufferline").setup{
+
+  options = {
+    numbers = "ordinal",
+    modified_icon = '●',
+    close_icon = '',
+    max_name_length = 18,
+    max_prefix_length = 15, -- prefix used when a buffer is deduplicated
+    show_buffer_icons = true, -- disable filetype icons for buffers
+    show_buffer_close_icons = true,
+    show_close_icon = true,
+    show_tab_indicators = true,
+    persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
+    separator_style = "thick",
+    sort_by = 'id',
+  },
+  highlights = {
+    buffer_selected = {
+      fg = '#FF5555',
+      -- bg = '#61afef',
+      bold = true,
+    },
+  },
+}
 
 -- Creating the SplitAllBuffers command
 vim.api.nvim_create_user_command('SplitAllBuffers', function()
