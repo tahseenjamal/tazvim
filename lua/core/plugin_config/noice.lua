@@ -20,7 +20,7 @@ require('noice').setup({
   views = {
     cmdline_popup = {
       border = {
-        style = "single", -- single line border style
+        style = "rounded", -- single line border style
         text = {
           top = " Command Prompt ", -- heading text
           top_align = "center"
