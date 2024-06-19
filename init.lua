@@ -1,5 +1,9 @@
+
+
+
 vim.opt.termguicolors = true
 
+-- vim.o.guifont = "MesloLGS NF:h14"
 
 
 -- Function to reload plugins.lua and run :PackerSync
