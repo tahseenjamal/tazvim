@@ -1,4 +1,4 @@
-require("neo-tree").setup({
+-- require("neo-tree").setup({
   -- filesystem = {
   --   follow_current_file = true,
   --   hijack_netrw_behavior = "open_current",
@@ -56,5 +56,7 @@ require("neo-tree").setup({
   --   },
   -- },
   -- -- other configuration options
-})
+-- })
 
+
+vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { noremap = true, silent = true })
