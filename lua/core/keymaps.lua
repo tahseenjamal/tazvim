@@ -22,7 +22,7 @@ vim.opt.incsearch = true
 
 
 vim.opt.tabstop = 4
-vim.opt.shiftwidth = 2
+vim.opt.shiftwidth = 4
 vim.opt.shiftround = true
 vim.opt.expandtab = true
 
@@ -30,14 +30,14 @@ vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 
 -- Function to close all buffers except the current one
 function CloseOtherBuffers()
-  local current_buf = vim.api.nvim_get_current_buf()
-  local buffers = vim.api.nvim_list_bufs()
+    local current_buf = vim.api.nvim_get_current_buf()
+    local buffers = vim.api.nvim_list_bufs()
 
-  for _, buf in ipairs(buffers) do
-    if buf ~= current_buf and vim.api.nvim_buf_is_loaded(buf) then
-      vim.cmd('bd ' .. buf)
+    for _, buf in ipairs(buffers) do
+        if buf ~= current_buf and vim.api.nvim_buf_is_loaded(buf) then
+            vim.cmd('bd ' .. buf)
+        end
     end
-  end
 end
 
 -- Map the function to a key combination, e.g., <leader>bo (buffer other)
