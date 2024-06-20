@@ -1,10 +1,15 @@
+
 -- Minimal config
 require("themery").setup({
-     themes = {
+    themes = {
         'gruvbox',
         'nord',
-        'tokyonight',
+        'tokyonight-night',
         'onedark',
+        'kanagawa-wave',
+        'kanagawa-dragon',
+        'kanagawa-lotus',
+        'iceberg',
         'dracula',
         'solarized',
         'PaperColor',
@@ -17,9 +22,10 @@ require("themery").setup({
         'gruvbox8',
         'edge'
     },
-  themeConfigFile = "~/.config/nvim/lua/settings/theme.lua", -- Described below
-  livePreview = true, -- Apply theme while browsing. Default to true.
+    themeConfigFile = "~/.config/nvim/lua/settings/theme.lua", -- Described below
+    livePreview = true, -- Apply theme while browsing. Default to true.
 })
+
 
 
 vim.api.nvim_set_keymap('n', '<leader>th', ':Themery<CR>', { noremap = true, silent = true })
