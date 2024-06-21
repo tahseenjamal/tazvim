@@ -2,7 +2,17 @@
 -- Minimal config
 require("themery").setup({
     themes = {
-        'gruvbox',
+        {
+            name = "Gruvbox dark",
+            colorscheme = "gruvbox",
+            before = [[ vim.opt.background = "dark" ]],
+        },
+        {
+            name = "Gruvbox light",
+            colorscheme = "gruvbox",
+            before = [[ vim.opt.background = "light" ]],
+            after = [[]]
+        },
         'nord',
         'tokyonight-night',
         'onedark',
@@ -20,7 +30,20 @@ require("themery").setup({
         'nightfox',
         'material',
         'gruvbox8',
-        'edge'
+        'edge',
+        'sonokai',
+        'moonlight',
+        {
+            name = "Caret dark",
+            colorscheme = "caret",
+            before = [[ vim.opt.background = "dark" ]],
+        },
+        {
+            name = "Caret light",
+            colorscheme = "caret",
+            before = [[ vim.opt.background = "light" ]],
+            after = [[]]
+        },
     },
     themeConfigFile = "~/.config/nvim/lua/settings/theme.lua", -- Described below
     livePreview = true, -- Apply theme while browsing. Default to true.
