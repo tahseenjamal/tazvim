@@ -14,7 +14,7 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     -- My plugins here
-    
+
     -- Windows plugin
     use { "anuvyklack/windows.nvim",
         requires = "anuvyklack/middleclass"
@@ -153,24 +153,26 @@ return require('packer').startup(function(use)
 
     use 'zaldih/themery.nvim'
     -- Themes
-    use { 'morhetz/gruvbox'}
-    use { 'arcticicestudio/nord-vim'}
-    use { 'folke/tokyonight.nvim'}
-    use { 'rebelot/kanagawa.nvim'}
-    use { 'joshdick/onedark.vim'}
-    use { 'cocopon/iceberg.vim'}
-    use { 'dracula/vim'}
-    use { 'altercation/vim-colors-solarized'}
-    use { 'NLKNguyen/papercolor-theme'}
-    use { 'haishanh/night-owl.vim'}
-    use { 'mhartington/oceanic-next'}
-    use { 'sainnhe/everforest'}
-    use { 'sainnhe/gruvbox-material'}
-    use { 'EdenEast/nightfox.nvim'}
-    use { 'marko-cerovac/material.nvim'}
-    use { 'lifepillar/vim-gruvbox8'}
-    use { 'sainnhe/edge'}
-
+    use 'morhetz/gruvbox'
+    use 'arcticicestudio/nord-vim'
+    use 'folke/tokyonight.nvim'
+    use 'rebelot/kanagawa.nvim'
+    use 'joshdick/onedark.vim'
+    use 'cocopon/iceberg.vim'
+    use 'dracula/vim'
+    use 'altercation/vim-colors-solarized'
+    use 'NLKNguyen/papercolor-theme'
+    use 'haishanh/night-owl.vim'
+    use 'mhartington/oceanic-next'
+    use 'sainnhe/everforest'
+    use 'sainnhe/gruvbox-material'
+    use 'EdenEast/nightfox.nvim'
+    use 'marko-cerovac/material.nvim'
+    use 'lifepillar/vim-gruvbox8'
+    use 'sainnhe/edge'
+    use 'sainnhe/sonokai'
+    use 'shaunsingh/moonlight.nvim'
+    use 'projekt0n/caret.nvim'
     -- End of themes
 
 
