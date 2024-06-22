@@ -17,7 +17,7 @@ require('mason-lspconfig').setup_handlers({
 })
 
 -- Example LSP server setup
-local servers = { "gopls", "pyright", "tsserver" }
+local servers = { "gopls", "pyright", "tsserver" , "clangd", "rust_analyzer" }
 for _, server in ipairs(servers) do
   lspconfig[server].setup {}
 end
