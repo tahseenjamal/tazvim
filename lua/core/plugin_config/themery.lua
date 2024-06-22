@@ -23,6 +23,26 @@ require("themery").setup({
             colorscheme = "catppuccin",
             before = [[ vim.opt.background = "dark" ]],
         },
+        {
+            name = "Neosolarized light",
+            colorscheme = "NeoSolarized",
+            before = [[ vim.opt.background = "light" ]],
+        },
+        {
+            name = "Neosolarize dark",
+            colorscheme = "NeoSolarized",
+            before = [[ vim.opt.background = "dark" ]],
+        },
+        {
+            name = "Adwaita dark",
+            colorscheme = "adwaita",
+            before = [[ vim.opt.background = "dark" ]],
+        },
+        {
+            name = "Adwaita light",
+            colorscheme = "adwaita",
+            before = [[ vim.opt.background = "light" ]],
+        },
         'sacredforest',
         'nord',
         'tokyonight-day',
