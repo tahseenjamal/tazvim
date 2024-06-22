@@ -17,7 +17,7 @@ require('mason-lspconfig').setup_handlers({
 })
 
 -- Example LSP server setup
-local servers = { "gopls", "pyright", "tsserver" , "clangd", "rust_analyzer" }
+local servers = { "gopls", "pyright", "tsserver", "clangd", "rust_analyzer" }
 for _, server in ipairs(servers) do
   lspconfig[server].setup {}
 end
@@ -38,34 +38,35 @@ lspconfig.gopls.setup{
         },
     },
     on_attach = function(client, bufnr)
-        local function buf_set_option(...)
-            vim.api.nvim_buf_set_option(bufnr, ...)
+        if vim.bo[bufnr].filetype == "go" then
+            local function buf_set_option(...)
+                vim.api.nvim_buf_set_option(bufnr, ...)
+            end
+
+            -- Enable completion triggered by <c-x><c-o>
+            buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+            -- Enable auto-format and auto-import on save
+            if client.server_capabilities.documentFormattingProvider then
+                vim.cmd [[augroup Format]]
+                vim.cmd [[autocmd! * <buffer>]]
+                vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+                vim.cmd [[autocmd BufWritePre <buffer> silent! lua vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })]]
+                vim.cmd [[augroup END]]
+            end
+
+            local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+            local opts = { noremap=true, silent=true }
+
+            -- Various key mappings for LSP features
+            buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+            buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+            buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+            buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+            buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+            buf_set_keymap('n', '<leader>jt', '<cmd>GoTagAdd json<CR>', opts)
+            buf_set_keymap('n', '<leader>yt', '<cmd>GoTagAdd yaml<CR>', opts)
         end
-
-        -- Enable completion triggered by <c-x><c-o>
-        buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-        -- Enable auto-format and auto-import on save
-        if client.server_capabilities.documentFormattingProvider then
-            vim.cmd [[augroup Format]]
-            vim.cmd [[autocmd! * <buffer>]]
-            vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-            vim.cmd [[autocmd BufWritePre <buffer> silent! lua vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })]]
-            vim.cmd [[augroup END]]
-        end
-
-        local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-        local opts = { noremap=true, silent=true }
-
-        -- Various key mappings for LSP fetures
-        buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-        buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-        buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-        buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-        buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-        buf_set_keymap('n', '<leader>jt', '<cmd>GoTagAdd json<CR>', opts)
-        buf_set_keymap('n', '<leader>yt', '<cmd>GoTagAdd yaml<CR>', opts)
-
     end,
 }
 
@@ -81,40 +82,44 @@ lspconfig.pyright.setup{
 
     -- Enable various python lsp features
     on_attach = function(client, bufnr)
-      local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-      local opts = { noremap=true, silent=true }
+        if vim.bo[bufnr].filetype == "python" then
+            local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+            local opts = { noremap=true, silent=true }
 
-      -- Key mappings for LSP
-      buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-      buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-      buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-      buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-      buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+            -- Key mappings for LSP
+            buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+            buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+            buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+            buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+            buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+        end
     end
 }
 
 -- C/C++
 lspconfig.clangd.setup {
     on_attach = function(client, bufnr)
-        local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-        local opts = { noremap=true, silent=true }
+        if vim.bo[bufnr].filetype == "c" or vim.bo[bufnr].filetype == "cpp" then
+            local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+            local opts = { noremap=true, silent=true }
 
-        buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-        buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-        buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-        buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-        buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-        buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-        buf_set_keymap('n', '<leader>cf', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>', opts)
+            buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+            buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+            buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+            buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+            buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+            buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+            buf_set_keymap('n', '<leader>cf', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>', opts)
 
-        -- Setup auto import on save
-        if client.server_capabilities.documentFormattingProvider then
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                buffer = bufnr,
-                callback = function()
-                    vim.lsp.buf.format({ bufnr = bufnr })
-                end,
-            })
+            -- Setup auto import on save
+            if client.server_capabilities.documentFormattingProvider then
+                vim.api.nvim_create_autocmd("BufWritePre", {
+                    buffer = bufnr,
+                    callback = function()
+                        vim.lsp.buf.format({ bufnr = bufnr })
+                    end,
+                })
+            end
         end
     end,
     cmd = { "clangd", "--background-index", "--suggest-missing-includes" },
@@ -129,18 +134,19 @@ lspconfig.clangd.setup {
     }
 }
 
-
 -- Rust (rust-analyzer) setup
 lspconfig.rust_analyzer.setup {
     on_attach = function(client, bufnr)
-        local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-        local opts = { noremap=true, silent=true }
+        if vim.bo[bufnr].filetype == "rust" then
+            local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+            local opts = { noremap=true, silent=true }
 
-        buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-        buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-        buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-        buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-        buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+            buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+            buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+            buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+            buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+            buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+        end
     end,
     flags = {
         debounce_text_changes = 150,
@@ -219,3 +225,4 @@ lspconfig.rust_analyzer.setup {
     }
     }
 }
+
