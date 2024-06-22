@@ -35,6 +35,10 @@ return require('packer').startup(function(use)
     -- lspkind icons
     use 'onsails/lspkind-nvim'
 
+    -- vim illuminate
+    use 'RRethy/vim-illuminate'
+
+
     -- Bufferline
     use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 
