@@ -13,7 +13,19 @@ require("themery").setup({
             before = [[ vim.opt.background = "light" ]],
             after = [[]]
         },
+        {
+            name = "Catppuccino light",
+            colorscheme = "catppuccin",
+            before = [[ vim.opt.background = "light" ]],
+        },
+        {
+            name = "Catppuccino dark",
+            colorscheme = "catppuccin",
+            before = [[ vim.opt.background = "dark" ]],
+        },
+        'sacredforest',
         'nord',
+        'tokyonight-day',
         'tokyonight-night',
         'onedark',
         'kanagawa-wave',
