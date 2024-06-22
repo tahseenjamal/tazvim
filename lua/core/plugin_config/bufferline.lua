@@ -6,20 +6,33 @@ require("bufferline").setup{
         modified_icon = '●',
         close_icon = '',
         max_name_length = 18,
-        max_prefix_length = 15, -- prefix used when a buffer is deduplicated
-        show_buffer_icons = true, -- disable filetype icons for buffers
+        max_prefix_length = 15, 
+        show_buffer_icons = true, 
         show_buffer_close_icons = true,
         show_close_icon = true,
         show_tab_indicators = true,
         persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
-        separator_style = "thick",
+        separator_style = "slant",
         sort_by = 'id',
     },
     highlights = {
         buffer_selected = {
-            fg = '#FF5555',
-            -- bg = '#61afef',
-            bold = true,
+            -- fg = '#FFFFFF', -- White color for text
+            fg = '#FF0000', -- Red background color
+            gui = 'bold,underline', -- Bold and underlined
+        },
+        numbers_selected = {
+            -- fg = '#FFFFFF', -- White color for text
+            fg = '#FF0000', -- Red background color
+            gui = 'bold,underline', -- Bold and underlined
+        },
+        buffer_visible = {
+            fg = '#FF0000', -- Red background color
+            gui = 'bold,underline', -- Bold and underlined
+        },
+        close_button_selected = {
+            fg = '#FF0000', -- Red background color
+            gui = 'bold,underline', -- Bold and underlined
         },
     },
 }
