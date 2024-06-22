@@ -1,7 +1,8 @@
 -- Themery block
 -- This block will be replaced by Themery.
-vim.opt.background = "light"
+vim.opt.background = "dark"
 
-vim.cmd("colorscheme adwaita")
-vim.g.theme_id = 8
+vim.cmd("colorscheme caret")
+vim.g.theme_id = 31
 -- end themery block
+
