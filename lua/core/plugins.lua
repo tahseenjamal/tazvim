@@ -173,6 +173,8 @@ return require('packer').startup(function(use)
     use 'sainnhe/sonokai'
     use 'shaunsingh/moonlight.nvim'
     use 'projekt0n/caret.nvim'
+    use 'catppuccin/nvim'
+    use 'karoliskoncevicius/sacredforest-vim'
     -- End of themes
 
 
