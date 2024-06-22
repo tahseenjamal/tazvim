@@ -53,12 +53,3 @@ for i = 1, 9 do
 end
 
 
-vim.cmd [[
-  augroup IlluminateHighlights
-  autocmd!
-  autocmd VimEnter * highlight IlluminatedWordText guibg=#ff0000 guifg=#ffffff
-  autocmd VimEnter * highlight IlluminatedWordRead guibg=#ff0000 guifg=#ffffff
-  autocmd VimEnter * highlight IlluminatedWordWrite guibg=#ff0000 guifg=#ffffff
-  autocmd VimEnter * highlight IlluminatedWordUnderCursor guibg=#ff0000 guifg=#ffffff
-  augroup END
-]]
