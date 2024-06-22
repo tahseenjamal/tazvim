@@ -7,7 +7,7 @@ require('illuminate').configure({
         'regex',
     },
     -- delay: delay in milliseconds
-    -- delay = 100,
+    delay = 50,
     -- filetype_overrides: filetype specific overrides.
     -- The keys are strings to represent the filetype while the values are tables that
     -- supports the same keys passed to .configure except for filetypes_denylist and filetypes_allowlist
@@ -54,13 +54,23 @@ require('illuminate').configure({
     case_insensitive_regex = false,
 })
 
+-- vim.cmd [[
+--   augroup IlluminateHighlights
+--   autocmd!
+--   autocmd VimEnter * highlight IlluminatedWordText guibg=#ff0000 guifg=#ffffff
+--   autocmd VimEnter * highlight IlluminatedWordRead guibg=#ff0000 guifg=#ffffff
+--   autocmd VimEnter * highlight IlluminatedWordWrite guibg=#ff0000 guifg=#ffffff
+--   augroup END
+-- ]]
+--
 vim.cmd [[
   augroup IlluminateHighlights
-  autocmd!
-  autocmd VimEnter * highlight IlluminatedWordText guibg=#ff0000 guifg=#ffffff
-  autocmd VimEnter * highlight IlluminatedWordRead guibg=#ff0000 guifg=#ffffff
-  autocmd VimEnter * highlight IlluminatedWordWrite guibg=#ff0000 guifg=#ffffff
+    autocmd!
+    autocmd ColorScheme * highlight IlluminatedWordText guibg=#ff0000 guifg=#ffffff
+    autocmd ColorScheme * highlight IlluminatedWordRead guibg=#ff0000 guifg=#ffffff
+    autocmd ColorScheme * highlight IlluminatedWordWrite guibg=#ff0000 guifg=#ffffff
   augroup END
 ]]
+
 
 
