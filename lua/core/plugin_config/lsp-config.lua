@@ -32,9 +32,6 @@ lspconfig.gopls.setup{
             staticcheck = true,
             usePlaceholders = true,
             completeUnimported = true,
-            analyses = {
-                unusedparams = true,
-            },
         },
     },
     on_attach = function(client, bufnr)
@@ -146,6 +143,14 @@ lspconfig.rust_analyzer.setup {
             buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
             buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
             buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+
+            -- Enable auto-format on save
+            if client.server_capabilities.documentFormattingProvider then
+                vim.cmd [[augroup Format]]
+                vim.cmd [[autocmd! * <buffer>]]
+                vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+                vim.cmd [[augroup END]]
+            end
         end
     end,
     flags = {
