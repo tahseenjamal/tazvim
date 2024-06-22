@@ -24,7 +24,7 @@ require('core.plugin_config.neotree')
 require('core.plugin_config.bufferline')
 require('core.plugin_config.nvim-window')
 require('core.plugin_config.windows')
-
+require('core.plugin_config.illuminate')
 
 
 
