@@ -24,23 +24,23 @@ end)
 -- require("ibl").setup { indent = { highlight = highlight } }
 
 require("ibl").setup(
-{
+    {
 
-      indent = { char = "│" , highlight = highlight},
-      -- indent = { char = "┃" , highlight = highlight  },
-      whitespace = { highlight = { "Whitespace", "NonText" } },
-      scope =  {
-        enabled = true,
-        char = "┃",
-        show_start = true,
-        show_end = true,
-        injected_languages = false,
-        highlight = { "Function", "Label" },
-        priority = 500,
-        include = {
-          node_type = { ["*"] = { "*" } },    
+        indent = { char = "│" , highlight = highlight},
+        -- indent = { char = "┃" , highlight = highlight  },
+        whitespace = { highlight = { "Whitespace", "NonText" } },
+        scope =  {
+            enabled = true,
+            char = "┃",
+            show_start = true,
+            show_end = true,
+            injected_languages = false,
+            highlight = { "Function", "Label" },
+            priority = 500,
+            include = {
+                node_type = { ["*"] = { "*" } },    
+            },
+
         },
-        
-      },
-})
+    })
 
