@@ -35,6 +35,9 @@ return require('packer').startup(function(use)
     -- lspkind icons
     use 'onsails/lspkind-nvim'
 
+    -- HLChunk Indent line
+    use 'shellRaining/hlchunk.nvim'
+
     -- vim illuminate
     use 'RRethy/vim-illuminate'
 
@@ -49,9 +52,6 @@ return require('packer').startup(function(use)
     use 'windwp/nvim-autopairs'
 
     use 'folke/which-key.nvim'
-
-    -- Indent lines
-    use "lukas-reineke/indent-blankline.nvim"
 
     -- Comment plugin
     use 'numToStr/Comment.nvim'
