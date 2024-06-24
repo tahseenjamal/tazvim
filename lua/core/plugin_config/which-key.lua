@@ -60,14 +60,15 @@ wk.setup {
 }
 
 local mappings = {
-    r = {
-        name = "refactor",  -- Optional group name
-        n = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-    },
     g = {
-        d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
-        -- Add other key mappings here
+        name = "Go",
+        d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
+        i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" }
     },
+    K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover Documentation" },
+    ["<C-k>"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
+    ["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename Symbol" }
 }
 
-wk.register(mappings, { prefix = "<leader>" })
+wk.register(mappings, { noremap=true, silent=true })
+
