@@ -75,6 +75,14 @@ return require('packer').startup(function(use)
     -- LSP Configurations
     use 'neovim/nvim-lspconfig'
 
+    -- Rust tools
+    use 'simrat39/rust-tools.nvim'
+
+    -- Neogen
+    use { 'danymat/neogen',
+        requires = { 'nvim-treesitter/nvim-treesitter' }
+    }
+
     -- Autocompletion
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
