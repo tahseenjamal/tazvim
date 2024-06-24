@@ -15,7 +15,6 @@ require('core.plugin_config.lsp-config')
 require('core.plugin_config.nvim-cmp')
 require('core.plugin_config.null-ls')
 require('core.plugin_config.gopher')
--- require('core.plugin_config.indentline')
 require('core.plugin_config.hlchunk')
 require('core.plugin_config.which-key')
 require('core.plugin_config.comment')
@@ -26,6 +25,8 @@ require('core.plugin_config.bufferline')
 require('core.plugin_config.nvim-window')
 require('core.plugin_config.windows')
 require('core.plugin_config.illuminate')
+require('core.plugin_config.rust-tools')
+require('core.plugin_config.neogen')
 
 
 
