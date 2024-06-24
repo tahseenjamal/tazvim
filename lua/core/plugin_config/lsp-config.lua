@@ -65,8 +65,6 @@ lspconfig.rust_analyzer.setup {
                 vim.cmd [[augroup END]]
             end
 
-            -- Bind the add_missing_type function to a key
-            buf_set_keymap('n', '<leader>at', '<Cmd>lua add_missing_type()<CR>', opts)
         end
     end,
     flags = {
@@ -74,6 +72,7 @@ lspconfig.rust_analyzer.setup {
     },
     settings = {
       ["rust-analyzer"] = {
+        offsetEncoding = "utf-16",
         cargo = {
             allFeatures = true,
             autoReload = true
