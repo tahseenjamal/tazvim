@@ -10,7 +10,7 @@ require("core.plugin_config.lazygit")
 require("core.plugin_config.noice")
 require('core.plugin_config.alpha')
 require('core.plugin_config.themery')
-require('core.plugin_config.cursorline')
+-- require('core.plugin_config.cursorline')
 require('core.plugin_config.lsp-config')
 require('core.plugin_config.nvim-cmp')
 require('core.plugin_config.null-ls')
@@ -29,17 +29,17 @@ require('core.plugin_config.rust-tools')
 require('core.plugin_config.neogen')
 
 
-
--- Ensure the theme and cursorline are set correctly after all plugins are loaded
-vim.api.nvim_create_autocmd("VimEnter", {
-  pattern = "*",
-  callback = function()
-  vim.opt.cursorline = true
-  end,
-})
-
 vim.defer_fn(function()
     require("settings.theme")
 end, 1)
+
+-- Ensure the theme and cursorline are set correctly after all plugins are loaded
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   pattern = "*",
+--   callback = function()
+--   vim.opt.cursorline = true
+--   end,
+-- })
+
 
 
