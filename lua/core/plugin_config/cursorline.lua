@@ -10,3 +10,6 @@ require('nvim-cursorline').setup {
     hl = { underline = true },
   }
 }
+
+vim.opt.cursorline = true
+
