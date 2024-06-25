@@ -59,7 +59,10 @@ lspconfig.pyright.setup {
     }
 }
 
-lspconfig.clangd.setup {
+
+
+-- Setup clangd
+lspconfig.clangd.setup({
     on_attach = function(client, bufnr)
         if vim.bo[bufnr].filetype == "c" or vim.bo[bufnr].filetype == "cpp" then
             local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -72,11 +75,13 @@ lspconfig.clangd.setup {
             buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 
             -- Enable auto-format on save
-            if client.server_capabilities.documentFormattingProvider then
-                vim.cmd [[augroup Format]]
-                vim.cmd [[autocmd! * <buffer>]]
-                vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)]]
-                vim.cmd [[augroup END]]
+            if client.supports_method("textDocument/formatting") then
+                vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+                vim.api.nvim_create_autocmd("BufWritePre", {
+                    group = augroup,
+                    buffer = bufnr,
+                    callback = function() vim.lsp.buf.format({ bufnr = bufnr, async = true }) end,
+                })
             end
         end
     end,
@@ -89,37 +94,64 @@ lspconfig.clangd.setup {
             usePlaceholders = true,
             completeUnimported = true,
             semanticHighlighting = true,
-            fallbackFlags = { "-std=c++17" },
-            showOrigins = true,
-            crossFileRename = true,
-            compileCommands = { "cmake", "ninja" },
-            diagnostic = {
-                enable = true,
-                category = {
-                    syntax = true,
-                    semantic = true,
-                    suggestion = true,
-                    warning = true,
-                    error = true
-                }
-            },
-            index = {
-                threads = 0,
-                background = true,
-                multiVersion = 2,
-                blacklist = { "build" }
-            },
-            selectionUI = {
-                behavior = "auto",
-                showOverloads = true,
-                showAttributes = true,
-                showReferences = true,
-                showStorage = true,
-                showTypes = true
+            fallbackFlags = {
+                "-std=c11",
+                "-std=gnu11",
+                "-std=c++17",
+                "-std=gnu++17",
+                "-std=c++20",
+                "-std=gnu++20"
             }
         }
     }
-}
+})-- Setup clangd
+lspconfig.clangd.setup({
+    on_attach = function(client, bufnr)
+        if vim.bo[bufnr].filetype == "c" or vim.bo[bufnr].filetype == "cpp" then
+            local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+            local opts = { noremap=true, silent=true }
+
+            buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+            buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+            buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+            buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+            buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+
+            -- Enable auto-format on save
+            -- if client.supports_method("textDocument/formatting") then
+            if client.server_capabilities.documentFormattingProvider then
+                vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+                vim.api.nvim_create_autocmd("BufWritePre", {
+                    group = augroup,
+                    buffer = bufnr,
+                    callback = function() vim.lsp.buf.format({ bufnr = bufnr, async = true }) end,
+                })
+            end
+        end
+    end,
+    flags = {
+        debounce_text_changes = 150,
+    },
+    cmd = { "clangd", "--compile-commands-dir=", "--fallback-style=none" },
+    settings = {
+        clangd = {
+            filetypes = { "c", "cpp" },
+            usePlaceholders = true,
+            completeUnimported = true,
+            semanticHighlighting = true,
+            fallbackFlags = {
+                "-std=c11",
+                "-std=c++17",
+                "-std=c++20",
+            }
+        }
+    }
+})
+
+
+
+
+
 
 lspconfig.gopls.setup {
     on_attach = function(client, bufnr)
