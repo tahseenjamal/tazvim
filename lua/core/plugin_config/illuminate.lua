@@ -36,7 +36,7 @@ require('illuminate').configure({
     -- Use :echom synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
     providers_regex_syntax_allowlist = {},
     -- under_cursor: whether or not to illuminate under the cursor
-    under_cursor = false,
+    under_cursor = true,
     -- large_file_cutoff: number of lines at which to use large_file_config
     -- The `under_cursor` option is disabled when this cutoff is hit
     large_file_cutoff = nil,
@@ -57,21 +57,21 @@ require('illuminate').configure({
 -- vim.cmd [[
 --   augroup IlluminateHighlights
 --   autocmd!
---   autocmd VimEnter * highlight IlluminatedWordText guibg=#ff0000 guifg=#ffffff
---   autocmd VimEnter * highlight IlluminatedWordRead guibg=#ff0000 guifg=#ffffff
---   autocmd VimEnter * highlight IlluminatedWordWrite guibg=#ff0000 guifg=#ffffff
+--   autocmd VimEnter * highlight IlluminatedWordText guibg=#111111 guifg=#ffffff
+--   autocmd VimEnter * highlight IlluminatedWordRead guibg=#111111 guifg=#ffffff
+--   autocmd VimEnter * highlight IlluminatedWordWrite guibg=#111111 guifg=#ffffff
 --   augroup END
 -- ]]
 --
-vim.cmd [[
-  augroup IlluminateHighlights
-    autocmd!
-    autocmd ColorScheme * highlight IlluminatedWordText guibg=#ff0000 guifg=#ffffff
-    autocmd ColorScheme * highlight IlluminatedWordRead guibg=#ff0000 guifg=#ffffff
-    autocmd ColorScheme * highlight IlluminatedWordWrite guibg=#ff0000 guifg=#ffffff
-  augroup END
-]]
-
+-- vim.cmd [[
+--   augroup IlluminateHighlights
+--     autocmd!
+--     autocmd ColorScheme * highlight IlluminatedWordText guibg=#111111 guifg=#ffffff
+--     autocmd ColorScheme * highlight IlluminatedWordRead guibg=#111111 guifg=#ffffff
+--     autocmd ColorScheme * highlight IlluminatedWordWrite guibg=#111111 guifg=#ffffff
+--   augroup END
+-- ]]
+--
 
 
 
