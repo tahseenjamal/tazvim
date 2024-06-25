@@ -1,9 +1,8 @@
 -- Themery block
 -- This block will be replaced by Themery.
-vim.opt.background = "light"
+vim.opt.background = "dark"
 
-vim.cmd("colorscheme gruvbox")
-
-vim.g.theme_id = 2
+vim.cmd("colorscheme catppuccin")
+vim.g.theme_id = 4
 -- end themery block
 
