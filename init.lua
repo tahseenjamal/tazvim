@@ -1,5 +1,7 @@
 
 vim.opt.termguicolors = true
+vim.opt.cursorline = true
+
 
 -- vim.o.guifont = "MesloLGS NF:h14"
 
