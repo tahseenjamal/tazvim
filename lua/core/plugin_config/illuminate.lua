@@ -63,15 +63,39 @@ require('illuminate').configure({
 --   augroup END
 -- ]]
 --
--- vim.cmd [[
---   augroup IlluminateHighlights
---     autocmd!
---     autocmd ColorScheme * highlight IlluminatedWordText guibg=#111111 guifg=#ffffff
---     autocmd ColorScheme * highlight IlluminatedWordRead guibg=#111111 guifg=#ffffff
---     autocmd ColorScheme * highlight IlluminatedWordWrite guibg=#111111 guifg=#ffffff
---   augroup END
--- ]]
---
 
+-- Function to set highlights based on the background
+local function set_illuminate_highlights()
+  if vim.opt.background:get() == "light" then
+    vim.cmd [[
+      highlight IlluminatedWordText guibg=#aaaaaa guifg=#ffffff
+      highlight IlluminatedWordRead guibg=#aaaaaa guifg=#ffffff
+      highlight IlluminatedWordWrite guibg=#aaaaaa guifg=#ffffff
+    ]]
+  else
+    vim.cmd [[
+      highlight IlluminatedWordText guibg=#600000 guifg=#FFFFFF
+      highlight IlluminatedWordRead guibg=#600000 guifg=#FFFFFF
+      highlight IlluminatedWordWrite guibg=#600000 guifg=#FFFFFF
+    ]]
+  end
+end
 
+-- Function to set highlights and ensure it's always applied correctly
+local function on_colorscheme()
+  vim.schedule(set_illuminate_highlights)
+end
+
+-- Create the ColorScheme autocmd
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = on_colorscheme,
+})
+
+-- Ensure highlights are set on startup
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = set_illuminate_highlights,
+})
+
+-- Call the function once to set the initial highlights
+set_illuminate_highlights()
 
