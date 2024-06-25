@@ -152,56 +152,63 @@ lspconfig.clangd.setup({
 
 
 
-
 lspconfig.gopls.setup {
-    on_attach = function(client, bufnr)
-        if vim.bo[bufnr].filetype == "go" then
-            local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-            local opts = { noremap=true, silent=true }
+  on_attach = function(client, bufnr)
+    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+    local opts = { noremap=true, silent=true }
 
-            buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-            buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-            buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-            buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-            buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 
-            -- Enable auto-format on save
-            if client.server_capabilities.documentFormattingProvider then
-                vim.cmd [[augroup Format]]
-                vim.cmd [[autocmd! * <buffer>]]
-                vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)]]
-                vim.cmd [[augroup END]]
-            end
-        end
-    end,
-    flags = {
-        debounce_text_changes = 150,
+    -- Enable auto-format on save
+    if client.server_capabilities.documentFormattingProvider then
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        buffer = bufnr,
+        callback = function() vim.lsp.buf.format({ async = false }) end,
+      })
+    end
+  end,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+        shadow = true,
+      },
+      staticcheck = true,
+      buildFlags = { "-tags=integration" },
+      codelenses = {
+        generate = true,
+        gc_details = true,
+        tidy = true,
+        upgrade_dependency = true,
+        vendor = true,
+        test = true,
+        regenerate_cgo = true,
+        run = true,
+        testfunc = true,
+        testfile = true,
+        testpackage = true,
+      },
+      usePlaceholders = true,
     },
-    settings = {
-        gopls = {
-            analyses = {
-                unusedparams = true,
-                shadow = true,
-            },
-            staticcheck = true,
-            buildFlags = { "-tags=integration" },
-            codelenses = {
-                generate = true,
-                gc_details = true,
-                tidy = true,
-                upgrade_dependency = true,
-                vendor = true,
-                test = true,
-                regenerate_cgo = true,
-                run = true,
-                testfunc = true,
-                testfile = true,
-                testpackage = true
-            },
-            usePlaceholders = true
-        }
-    }
+  },
 }
+
+
+
+
+
+
+
+
+
+
 
 -- Rust (rust-analyzer) setup
 lspconfig.rust_analyzer.setup {
