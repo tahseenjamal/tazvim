@@ -153,7 +153,6 @@ lspconfig.gopls.setup {
             },
             staticcheck = true,
             buildFlags = { "-tags=integration" },
-            experimentalWorkspaceModule = true,
             codelenses = {
                 generate = true,
                 gc_details = true,
