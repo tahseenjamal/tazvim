@@ -35,6 +35,7 @@ return require('packer').startup(function(use)
     -- lspkind icons
     use 'onsails/lspkind-nvim'
 
+
     -- HLChunk Indent line
     use 'shellRaining/hlchunk.nvim'
 
@@ -161,7 +162,7 @@ return require('packer').startup(function(use)
         'goolord/alpha-nvim',
         requires = { 'nvim-lua/plenary.nvim' }
     }
-    use 'yamatsum/nvim-cursorline'
+    -- use 'yamatsum/nvim-cursorline'
 
     use 'zaldih/themery.nvim'
     -- Themes
