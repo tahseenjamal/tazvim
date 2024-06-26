@@ -118,7 +118,6 @@ lspconfig.clangd.setup({
             buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 
             -- Enable auto-format on save
-            -- if client.supports_method("textDocument/formatting") then
             if client.server_capabilities.documentFormattingProvider then
                 vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
                 vim.api.nvim_create_autocmd("BufWritePre", {
