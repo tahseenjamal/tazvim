@@ -1,62 +1,6 @@
--- require("neo-tree").setup({
-  -- filesystem = {
-  --   follow_current_file = true,
-  --   hijack_netrw_behavior = "open_current",
-  --   use_libuv_file_watcher = true,
-  --   window = {
-  --     mappings = {
-  --       ["a"] = function(state)
-  --
-  --
-  --         -- Function to check if a path is a file or directory
-  --         local function is_file_or_directory(path)
-  --             local stat = vim.loop.fs_stat(path)
-  --            if stat == nil then
-  --               return nil  -- Path does not exist
-  --             elseif stat.type == "file" then
-  --                 return "file"
-  --             elseif stat.type == "directory" then
-  --                 return "directory"
-  --             end
-  --         end
-  --
-  --
-  --         local inputs = require("neo-tree.ui.inputs")
-  --         local utils = require("neo-tree.utils")
-  --         local path = state.tree:get_node().path
-  --         local result = is_file_or_directory(path)
-  --
-  --         if result == "file" then
-  --             -- Remove the file name from the path
-  --             path = path:match("(.*/)")
-  --         end
-  --
-  --         inputs.input("Enter new name for new file: ", "", function(name)
-  --           if not name or name == "" then
-  --             return
-  --           end
-  --           local file_path = utils.path_join(path, name)
-  --           -- Use standard Lua file I/O to create the file
-  --           local fd = io.open(file_path, "w")
-  --           if fd then
-  --             fd:close()
-  --             -- state.commands.refresh(state)
-  --             vim.defer_fn(function()
-  --               state.commands.refresh(state)
-  --               require("neo-tree.sources.filesystem").navigate(state, state.path, file_path)
-  --             end, 10)
-  --           else
-  --             vim.api.nvim_err_writeln("Could not create file: " .. file_path)
-  --           end
-  --         end)
-  --       end,
-  --       ["A"] = "add_directory",  -- Keep default behavior for 'A'
-  --       -- other mappings
-  --     },
-  --   },
-  -- },
-  -- -- other configuration options
--- })
+require("neo-tree").setup({
+  -- other configuration options
+})
 
 
 vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { noremap = true, silent = true })
