@@ -22,7 +22,7 @@ for _, server in ipairs(servers) do
     lspconfig[server].setup {}
 end
 
-lspconfig.pyright.setup {
+lspconfig.pyright.setup({
     on_attach = function(client, bufnr)
         if vim.bo[bufnr].filetype == "python" then
             local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -57,54 +57,11 @@ lspconfig.pyright.setup {
             }
         }
     }
-}
+})
 
 
 
--- Setup clangd
-lspconfig.clangd.setup({
-    on_attach = function(client, bufnr)
-        if vim.bo[bufnr].filetype == "c" or vim.bo[bufnr].filetype == "cpp" then
-            local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-            local opts = { noremap=true, silent=true }
 
-            buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-            buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-            buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-            buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-            buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-
-            -- Enable auto-format on save
-            if client.supports_method("textDocument/formatting") then
-                vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-                vim.api.nvim_create_autocmd("BufWritePre", {
-                    group = augroup,
-                    buffer = bufnr,
-                    callback = function() vim.lsp.buf.format({ bufnr = bufnr, async = true }) end,
-                })
-            end
-        end
-    end,
-    flags = {
-        debounce_text_changes = 150,
-    },
-    settings = {
-        clangd = {
-            filetypes = { "c", "cpp" },
-            usePlaceholders = true,
-            completeUnimported = true,
-            semanticHighlighting = true,
-            fallbackFlags = {
-                "-std=c11",
-                "-std=gnu11",
-                "-std=c++17",
-                "-std=gnu++17",
-                "-std=c++20",
-                "-std=gnu++20"
-            }
-        }
-    }
-})-- Setup clangd
 lspconfig.clangd.setup({
     on_attach = function(client, bufnr)
         if vim.bo[bufnr].filetype == "c" or vim.bo[bufnr].filetype == "cpp" then
@@ -151,7 +108,7 @@ lspconfig.clangd.setup({
 
 
 
-lspconfig.gopls.setup {
+lspconfig.gopls.setup({
   on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local opts = { noremap=true, silent=true }
@@ -197,7 +154,7 @@ lspconfig.gopls.setup {
       usePlaceholders = true,
     },
   },
-}
+})
 
 
 
@@ -210,7 +167,7 @@ lspconfig.gopls.setup {
 
 
 -- Rust (rust-analyzer) setup
-lspconfig.rust_analyzer.setup {
+lspconfig.rust_analyzer.setup({
     on_attach = function(client, bufnr)
         if vim.bo[bufnr].filetype == "rust" then
             local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -308,5 +265,5 @@ lspconfig.rust_analyzer.setup {
             }
         }
     }
-}
+})
 
