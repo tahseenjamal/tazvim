@@ -35,6 +35,8 @@ return require('packer').startup(function(use)
     -- lspkind icons
     use 'onsails/lspkind-nvim'
 
+    -- Silicon 
+    use 'michaelrommel/nvim-silicon'
 
     -- HLChunk Indent line
     use 'shellRaining/hlchunk.nvim'
