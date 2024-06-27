@@ -27,6 +27,7 @@ require('core.plugin_config.illuminate')
 require('core.plugin_config.rust-tools')
 require('core.plugin_config.neogen')
 require('core.plugin_config.nvim-silicon')
+require('core.plugin_config.chatgpt')
 
 
 vim.defer_fn(function()
