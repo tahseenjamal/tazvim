@@ -35,6 +35,16 @@ return require('packer').startup(function(use)
     -- lspkind icons
     use 'onsails/lspkind-nvim'
 
+    -- Chatgpt
+    use {
+        'jackMort/ChatGPT.nvim',
+        requires = {
+        'MunifTanjim/nui.nvim',
+        'nvim-lua/plenary.nvim',
+        'nvim-telescope/telescope.nvim'
+        }
+    }
+
     -- Silicon 
     use 'michaelrommel/nvim-silicon'
 
