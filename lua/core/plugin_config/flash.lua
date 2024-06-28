@@ -31,3 +31,4 @@ vim.keymap.set('n', '<C-S-s>', function() require("flash").treesitter() end, { n
 vim.keymap.set('o', '<C-r>', function() require("flash").remote() end, { noremap = true, silent = true, desc = "Remote Flash" })
 vim.keymap.set('o', '<C-S-r>', function() require("flash").treesitter_search() end, { noremap = true, silent = true, desc = "Treesitter Search" })
 vim.keymap.set('c', '<C-s>', function() require("flash").toggle() end, { noremap = true, silent = true, desc = "Toggle Flash Search" })
+vim.api.nvim_set_keymap('n', '<leader>l', ":lua require'flash'.jump({mode='line'})<CR>", { noremap = true, silent = true })
