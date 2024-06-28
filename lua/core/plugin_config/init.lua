@@ -31,11 +31,9 @@ require('core.plugin_config.vim-move')
 require('core.plugin_config.rust')
 require('core.plugin_config.crates')
 
-
 vim.defer_fn(function()
     require("settings.theme")
 end, 1)
-
 
 
 
