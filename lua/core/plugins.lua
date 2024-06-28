@@ -35,6 +35,9 @@ return require('packer').startup(function(use)
     -- lspkind icons
     use 'onsails/lspkind-nvim'
 
+    -- vim move 
+    use 'matze/vim-move'
+
     -- Chatgpt
     use {
         'jackMort/ChatGPT.nvim',
