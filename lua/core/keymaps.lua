@@ -46,6 +46,10 @@ vim.api.nvim_set_keymap('n', '<leader>bo', ':lua CloseOtherBuffers()<CR>', { nor
 
 -- Key mapping to close the current buffer
 vim.api.nvim_set_keymap('n', '<leader>bd', ':bd<CR>', { noremap = true, silent = true })
+--
+-- Key mapping to close the current unsaved buffer
+vim.api.nvim_set_keymap('n', '<leader>bu', ':bd!<CR>', { noremap = true, silent = true })
+
 -- Key mapping to close all buffers
 vim.api.nvim_set_keymap('n', '<leader>ba', ':bufdo bd<CR>', { noremap = true, silent = true })
 
