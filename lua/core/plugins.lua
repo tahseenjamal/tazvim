@@ -38,6 +38,9 @@ return require('packer').startup(function(use)
     -- rust vim
     use 'rust-lang/rust.vim'
 
+    -- crates nvim
+    use 'saecki/crates.nvim'
+
     -- vim move 
     use 'matze/vim-move'
 
