@@ -35,6 +35,9 @@ return require('packer').startup(function(use)
     -- lspkind icons
     use 'onsails/lspkind-nvim'
 
+    -- rust vim
+    use 'rust-lang/rust.vim'
+
     -- vim move 
     use 'matze/vim-move'
 
