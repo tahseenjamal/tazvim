@@ -28,7 +28,7 @@ require('core.plugin_config.rust-tools')
 require('core.plugin_config.neogen')
 require('core.plugin_config.nvim-silicon')
 require('core.plugin_config.chatgpt')
-
+require('core.plugin_config.vim-move')
 
 vim.defer_fn(function()
     require("settings.theme")
