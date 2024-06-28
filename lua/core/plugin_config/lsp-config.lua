@@ -180,12 +180,20 @@ lspconfig.rust_analyzer.setup({
             buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 
             -- Enable auto-format on save
-            if client.server_capabilities.documentFormattingProvider then
-                vim.cmd [[augroup Format]]
-                vim.cmd [[autocmd! * <buffer>]]
-                vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-                vim.cmd [[augroup END]]
-            end
+            -- if client.server_capabilities.documentFormattingProvider then
+            --     vim.cmd [[augroup Format]]
+            --     vim.cmd [[autocmd! * <buffer>]]
+            --     vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+            --     vim.cmd [[augroup END]]
+            -- end
+
+            -- Enable auto-formatting on save
+            -- vim.api.nvim_create_autocmd("BufWritePre", {
+            --     pattern = "*.rs",
+            --     callback = function()
+            --         vim.lsp.buf.formatting_sync(nil, 1000)
+            --     end,
+            -- })
         end
     end,
     flags = {
@@ -196,7 +204,8 @@ lspconfig.rust_analyzer.setup({
             offsetEncoding = "utf-16",
             cargo = {
                 allFeatures = true,
-                autoReload = true
+                autoReload = true,
+                loadOutDirsFromCheck = true
             },
             procMacro = {
                 enable = true
@@ -238,7 +247,7 @@ lspconfig.rust_analyzer.setup({
                 prefix = "self"
             },
             assist = {
-                importMergeBehavior = "last",
+                importGranularity = "item",
                 importPrefix = "by_self"
             },
             lens = {
