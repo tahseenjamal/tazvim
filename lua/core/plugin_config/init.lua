@@ -1,5 +1,4 @@
 
--- require("core.plugin_config.gruvbox")
 require("core.plugin_config.lualine")
 require("core.plugin_config.nvim-tree")
 require("core.plugin_config.telescope")
@@ -34,13 +33,6 @@ vim.defer_fn(function()
     require("settings.theme")
 end, 1)
 
--- Ensure the theme and cursorline are set correctly after all plugins are loaded
--- vim.api.nvim_create_autocmd("VimEnter", {
---   pattern = "*",
---   callback = function()
---   vim.opt.cursorline = true
---   end,
--- })
 
 
 
