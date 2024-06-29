@@ -1,6 +1,7 @@
 -- Setup LSP servers
 local lspconfig = require'lspconfig'
 
+
 -- Setup Mason
 require('mason').setup()
 
@@ -31,7 +32,7 @@ lspconfig.pyright.setup({
             buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
             buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
             buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-            buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+            buf_set_keymap('n', 'gk', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
             buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 
             -- Enable auto-format on save
@@ -109,58 +110,52 @@ lspconfig.clangd.setup({
 
 
 lspconfig.gopls.setup({
-  on_attach = function(client, bufnr)
-    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-    local opts = { noremap=true, silent=true }
+    on_attach = function(client, bufnr)
+        local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+        local opts = { noremap=true, silent=true }
 
-    buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+        buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+        buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+        buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+        buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+        buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 
-    -- Enable auto-format on save
-    if client.server_capabilities.documentFormattingProvider then
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        buffer = bufnr,
-        callback = function() vim.lsp.buf.format({ async = false }) end,
-      })
-    end
-  end,
-  flags = {
-    debounce_text_changes = 150,
-  },
-  settings = {
-    gopls = {
-      analyses = {
-        unusedparams = true,
-        shadow = true,
-      },
-      staticcheck = true,
-      buildFlags = { "-tags=integration" },
-      codelenses = {
-        generate = true,
-        gc_details = true,
-        tidy = true,
-        upgrade_dependency = true,
-        vendor = true,
-        test = true,
-        regenerate_cgo = true,
-        run = true,
-        testfunc = true,
-        testfile = true,
-        testpackage = true,
-      },
-      usePlaceholders = true,
+        -- Enable auto-format on save
+        if client.server_capabilities.documentFormattingProvider then
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                buffer = bufnr,
+                callback = function() vim.lsp.buf.format({ async = false }) end,
+            })
+        end
+    end,
+    flags = {
+        debounce_text_changes = 150,
     },
-  },
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+                shadow = true,
+            },
+            staticcheck = true,
+            buildFlags = { "-tags=integration" },
+            codelenses = {
+                generate = true,
+                gc_details = true,
+                tidy = true,
+                upgrade_dependency = true,
+                vendor = true,
+                test = true,
+                regenerate_cgo = true,
+                run = true,
+                testfunc = true,
+                testfile = true,
+                testpackage = true,
+            },
+            usePlaceholders = true,
+        },
+    },
 })
-
-
-
-
-
-
 
 
 
@@ -170,8 +165,11 @@ lspconfig.gopls.setup({
 lspconfig.rust_analyzer.setup({
     on_attach = function(client, bufnr)
         if vim.bo[bufnr].filetype == "rust" then
+            require("inlay-hints").on_attach(client, bufnr)
+
             local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
             local opts = { noremap=true, silent=true }
+
 
             buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
             buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
@@ -204,26 +202,48 @@ lspconfig.rust_analyzer.setup({
                 enableExperimental = true
             },
             completion = {
-                postfix = {
-                    enable = true
-                },
-                autoimport = {
-                    enable = true
-                }
+                postfix = true,
+                autoimport = true,
+            },
+            hints = {
+                parameterHints = true, 
+                typeHints = true,
+                enable = true,
+                arrayIndex = true,
+                setType = true,
+
             },
             inlayHints = {
-                typeHints = {
-                    enable = true
+                bindingModeHints = {
+                    enable = false,
                 },
                 chainingHints = {
-                    enable = true
+                    enable = true,
                 },
-                parameterHints = {
-                    enable = true
+                closingBraceHints = {
+                    enable = true,
+                    minLines = 25,
                 },
                 closureReturnTypeHints = {
-                    enable = true
-                }
+                    enable = "never",
+                },
+                lifetimeElisionHints = {
+                    enable = "never",
+                    useParameterNames = false,
+                },
+                maxLength = 25,
+                parameterHints = {
+                    enable = true,
+                },
+                reborrowHints = {
+                    enable = "never",
+                },
+                renderColons = true,
+                typeHints = {
+                    enable = true,
+                    hideClosureInitialization = false,
+                    hideNamedConstructor = false,
+                },
             },
             imports = {
                 granularity = {
