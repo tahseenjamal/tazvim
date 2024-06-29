@@ -30,10 +30,9 @@ require('core.plugin_config.chatgpt')
 require('core.plugin_config.vim-move')
 require('core.plugin_config.rust')
 require('core.plugin_config.crates')
+require('core.plugin_config.inlay-hints')
 
 vim.defer_fn(function()
     require("settings.theme")
 end, 1)
-
-
 
