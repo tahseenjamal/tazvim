@@ -38,6 +38,12 @@ return require('packer').startup(function(use)
     -- rust vim
     use 'rust-lang/rust.vim'
 
+    -- lsp inlay hints
+     use {
+        "MysticalDevil/inlay-hints.nvim",
+    requires = { "neovim/nvim-lspconfig" },
+    }
+
     -- crates nvim
     use 'saecki/crates.nvim'
 
