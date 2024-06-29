@@ -40,6 +40,9 @@ function CloseOtherBuffers()
     end
 end
 
+
+local opts = { noremap = true, silent = true }
+
 -- Map the function to a key combination, e.g., <leader>bo (buffer other)
 vim.api.nvim_set_keymap('n', '<leader>bo', ':lua CloseOtherBuffers()<CR>', { noremap = true, silent = true })
 
@@ -60,5 +63,6 @@ vim.api.nvim_set_keymap('n', '<leader>bj', ':bn<CR>', { noremap = true, silent =
 
 -- Code Action LSP
 vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap=true, silent=true })
+
 
 
