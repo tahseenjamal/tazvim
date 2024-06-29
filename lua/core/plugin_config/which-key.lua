@@ -66,7 +66,7 @@ local mappings = {
         i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" }
     },
     K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover Documentation" },
-    ["<C-k>"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
+    ["gk"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
     ["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename Symbol" }
 }
 
