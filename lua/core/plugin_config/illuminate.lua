@@ -74,9 +74,9 @@ local function set_illuminate_highlights()
     ]]
   else
     vim.cmd [[
-      highlight IlluminatedWordText guibg=#600000 guifg=#FFFFFF
-      highlight IlluminatedWordRead guibg=#600000 guifg=#FFFFFF
-      highlight IlluminatedWordWrite guibg=#600000 guifg=#FFFFFF
+      highlight IlluminatedWordText guibg=#000060 guifg=#FFFFFF
+      highlight IlluminatedWordRead guibg=#000060 guifg=#FFFFFF
+      highlight IlluminatedWordWrite guibg=#000060 guifg=#FFFFFF
     ]]
   end
 end
