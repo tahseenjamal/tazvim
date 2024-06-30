@@ -7,7 +7,8 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 -- Setup null-ls
 null_ls.setup({
     sources = {
-        null_ls.builtins.formatting.prettier.with({
+        null_ls.builtins.formatting.prettierd.with({
+            filetypes = { "javascript", "typescript", "css", "html", "json", "yaml", "markdown", "lua" }, -- Add your supported filetypes
             extra_args = { "--single-quote", "--jsx-single-quote" }
         }),
         -- null_ls.builtins.diagnostics.revive,  -- Use revive instead of golint
