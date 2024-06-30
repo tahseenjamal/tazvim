@@ -37,3 +37,12 @@ vim.defer_fn(function()
     require("settings.theme")
 end, 1)
 
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+            vim.defer_fn(function()
+                vim.lsp.inlay_hint.enable(true)
+            end, 2000)  
+    end,
+})
+
