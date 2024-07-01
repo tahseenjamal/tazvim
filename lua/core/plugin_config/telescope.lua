@@ -34,6 +34,9 @@ telescope.setup {
         }
     },  
     pickers = {
+        colorscheme = {
+            enable_preview = true,
+        },
         find_files = {
             attach_mappings = function(prompt_bufnr, map)
                 -- Add your custom mappings here if any
