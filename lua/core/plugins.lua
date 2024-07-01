@@ -217,6 +217,7 @@ return require('packer').startup(function(use)
     use 'karoliskoncevicius/sacredforest-vim'
     use 'overcache/NeoSolarized'
     use 'Mofiqul/adwaita.nvim'
+    use 'projekt0n/github-nvim-theme'
     -- End of themes
 
 
