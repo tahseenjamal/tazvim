@@ -266,8 +266,8 @@ lspconfig.rust_analyzer.setup({
                     enable = "never",
                 },
                 lifetimeElisionHints = {
-                    enable = "never",
-                    useParameterNames = false,
+                    enable = true,
+                    useParameterNames = true,
                 },
                 maxLength = 25,
                 parameterHints = {
@@ -278,9 +278,12 @@ lspconfig.rust_analyzer.setup({
                 },
                 renderColons = true,
                 typeHints = {
-                    enable = true,
-                    hideClosureInitialization = false,
-                    hideNamedConstructor = false,
+                    enable = true}
+                ,
+                hideClosureInitialization = {
+                    enable = false},
+                hideNamedConstructor = {
+                    enable = false
                 },
             },
             imports = {
