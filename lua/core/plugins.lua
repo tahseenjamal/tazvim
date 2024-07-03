@@ -218,6 +218,8 @@ return require('packer').startup(function(use)
     use 'overcache/NeoSolarized'
     use 'Mofiqul/adwaita.nvim'
     use 'projekt0n/github-nvim-theme'
+    use 'ribru17/bamboo.nvim'
+    use 'comfysage/evergarden'
     -- End of themes
 
 
