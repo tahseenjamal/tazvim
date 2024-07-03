@@ -33,6 +33,7 @@ require('core.plugin_config.crates')
 require('core.plugin_config.inlay-hints')
 require('core.plugin_config.mason')
 
+
 vim.defer_fn(function()
     require("settings.theme")
 end, 1)
