@@ -105,13 +105,18 @@ lspconfig.clangd.setup({
             buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
             buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 
-            -- Enable auto-format on save
+            -- Enable auto format on save
             if client.server_capabilities.documentFormattingProvider then
-                vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
                 vim.api.nvim_create_autocmd("BufWritePre", {
-                    group = augroup,
                     buffer = bufnr,
-                    callback = function() vim.lsp.buf.format({ bufnr = bufnr, async = true }) end,
+                    callback = function()
+                         -- Save the current cursor position
+  local current_pos = vim.api.nvim_win_get_cursor(0)
+  -- Format the entire file
+  vim.api.nvim_command('normal! gg=G')
+  -- Restore the cursor position
+  vim.api.nvim_win_set_cursor(0, current_pos)
+                    end
                 })
             end
         end
