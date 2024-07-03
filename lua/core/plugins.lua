@@ -220,6 +220,8 @@ return require('packer').startup(function(use)
     use 'projekt0n/github-nvim-theme'
     use 'ribru17/bamboo.nvim'
     use 'comfysage/evergarden'
+    use 'junegunn/seoul256.vim'
+    use 'flrnd/candid.vim'
     -- End of themes
 
 
