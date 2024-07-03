@@ -14,7 +14,6 @@ local themes = require('telescope.themes')
 
 
 
-
 telescope.setup {
     defaults = {
         mappings = {
@@ -71,4 +70,5 @@ telescope.setup {
 
 -- To get fzf loaded and working with telescope, you need to call
 telescope.load_extension('fzf')
+
 
