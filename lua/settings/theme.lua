@@ -1,8 +1,8 @@
 -- Themery block
 -- This block will be replaced by Themery.
-vim.opt.background="dark"
+vim.g.catppuccin_flavour = "frappe"
 
-vim.cmd("colorscheme evergarden")
-vim.g.theme_id = 12
+vim.cmd("colorscheme catppuccin")
+vim.g.theme_id = 5
 -- end themery block
 
