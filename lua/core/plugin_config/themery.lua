@@ -1,3 +1,14 @@
+-- Get the NVIM_APPNAME environment variable
+local nvim_appname = vim.fn.getenv("NVIM_APPNAME")
+
+-- Set the base path
+local base_path = "~/.config/"
+
+-- If NVIM_APPNAME is set, use it; otherwise default to 'nvim'
+local nvim_folder = nvim_appname and nvim_appname or "nvim"
+
+-- Construct the full path
+local theme_path = base_path .. nvim_folder .. "/lua/settings/theme.lua"
 
 -- Minimal config
 require("themery").setup({
@@ -127,11 +138,10 @@ require("themery").setup({
             after = [[]]
         },
     },
-    themeConfigFile = "~/.config/nvim/lua/settings/theme.lua", -- Described below
+    themeConfigFile = theme_path, -- Use the dynamically constructed path
+
     livePreview = true, -- Apply theme while browsing. Default to true.
 })
-
-
 
 vim.api.nvim_set_keymap('n', '<leader>th', ':Themery<CR>', { noremap = true, silent = true })
 
