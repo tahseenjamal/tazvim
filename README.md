@@ -44,11 +44,17 @@ You should have neovim installed on your system along with git, npm, python3, C/
     git clone https://github.com/tahseenjamal/tazvim.git ~/.config/nvim
     ```
 
-2.  **Run nvim**:
+2.  **Clone the repository**:
+
+    ```
+    brew install ripgrep lazygit
+    ```
+3.  **Run nvim**:
 
     ```
     nvim
     ```
+    Also do run Mason inside nvim to install language servers and formatters
 
 ### Please install dependencies of go formating, python formating, and c/c++ formating using the following commands:
 
