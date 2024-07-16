@@ -72,3 +72,20 @@ local mappings = {
 
 wk.register(mappings, { noremap=true, silent=true })
 
+
+
+-- -- Disable which-key when lazygit is opened
+-- vim.api.nvim_create_autocmd("User", {
+--   pattern = "LazygitEnter",
+--   callback = function()
+--     vim.b.which_key_disable = true
+--   end,
+-- })
+--
+-- -- Re-enable which-key when lazygit is closed
+-- vim.api.nvim_create_autocmd("User", {
+--   pattern = "LazygitExit",
+--   callback = function()
+--     vim.b.which_key_disable = false
+--   end,
+-- })
