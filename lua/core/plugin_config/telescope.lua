@@ -1,6 +1,14 @@
 local builtin = require('telescope.builtin')
+local nvim_appname = vim.fn.getenv("NVIM_APPNAME")
+local base_path = "~/.config/"
+local nvim_folder = nvim_appname and nvim_appname or "nvim"
+local config_path = base_path .. nvim_folder 
+
+-- Construct the full path
+local theme_path = base_path .. nvim_folder .. "/lua/settings/theme.lua"
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>fs', function() builtin.find_files({ cwd = "~/.config/nvim" }) end, { noremap = true, silent = true })
+-- vim.keymap.set('n', '<leader>fs', function() builtin.find_files({ cwd = "~/.config/nvim" }) end, { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>fs', function() builtin.find_files({ cwd = config_path }) end, { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { noremap = true, silent = true })
