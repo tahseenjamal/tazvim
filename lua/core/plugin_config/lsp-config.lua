@@ -18,40 +18,11 @@ require('mason-lspconfig').setup_handlers({
 })
 
 -- Example LSP server setup
-local servers = { "gopls", "pyright", "basedpyright","clangd", "rust_analyzer" }
+local servers = { "gopls", "pyright", "clangd", "rust_analyzer" }
 for _, server in ipairs(servers) do
     lspconfig[server].setup {}
 end
 
-lspconfig.basedpyright.setup({
-    settings = {
-        basedpyright = {
-            analysis = {
-                autoSearchPaths = true,
-                diagnosticMode = "openFilesOnly",
-                useLibraryCodeForTypes = true
-            }
-        },
-        python = {
-            analysis = {
-                typeCheckingMode = "strict", -- Set type checking mode to strict
-                autoSearchPaths = true,
-                useLibraryCodeForTypes = true,
-            },
-        },
-    },
-    on_attach = function(client, bufnr)
-        -- Key mappings and other on_attach configuration
-        local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-        local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-        buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-        -- Mappings.
-        local opts = { noremap=true, silent=true }
-
-    end,
-})
 
 lspconfig.pyright.setup({
     on_attach = function(client, bufnr)
@@ -84,7 +55,7 @@ lspconfig.pyright.setup({
                 useLibraryCodeForTypes = true,
                 diagnosticMode = "workspace",
                 typeCheckingMode = "basic",
-                stubPath = "/home/username/.local/share/nvim/stub"
+                stubPath = "/Users/tahseen/.local/share/tazvim/stub"
             }
         }
     }
