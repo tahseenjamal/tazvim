@@ -3,7 +3,7 @@ vim.opt.termguicolors = true
 vim.opt.cursorline = true
 
 
--- vim.o.guifont = "MesloLGS NF:h14"
+vim.o.guifont = "MesloLGS NF:h14"
 
 
 -- Function to reload plugins.lua and run :PackerSync
