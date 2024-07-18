@@ -44,6 +44,7 @@ return require('packer').startup(function(use)
     requires = { "neovim/nvim-lspconfig" },
     }
 
+
     -- crates nvim
     use 'saecki/crates.nvim'
 
@@ -79,7 +80,7 @@ return require('packer').startup(function(use)
     -- Auto pairs
     use 'windwp/nvim-autopairs'
 
-    use 'folke/which-key.nvim'
+    -- use 'folke/which-key.nvim'
 
     -- Comment plugin
     use 'numToStr/Comment.nvim'
@@ -102,6 +103,8 @@ return require('packer').startup(function(use)
 
     -- LSP Configurations
     use 'neovim/nvim-lspconfig'
+
+    use 'nvim-lua/lsp_extensions.nvim'
 
     -- Rust tools
     use 'simrat39/rust-tools.nvim'
