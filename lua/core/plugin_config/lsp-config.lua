@@ -7,6 +7,7 @@ require('mason').setup()
 
 -- Setup Mason LSPConfig
 require('mason-lspconfig').setup({
+    ensure_installed = { 'pyright', 'clangd', 'gopls', 'rust_analyzer' },
     automatic_installation = true -- Automatically install configured servers
 })
 
@@ -18,13 +19,13 @@ require('mason-lspconfig').setup_handlers({
 })
 
 -- Example LSP server setup
-local servers = { "gopls", "pyright", "clangd", "rust_analyzer" }
+local servers = { "gopls", "basedpyright", "clangd", "rust_analyzer" }
 for _, server in ipairs(servers) do
     lspconfig[server].setup {}
 end
 
 
-lspconfig.pyright.setup({
+lspconfig.basedpyright.setup({
     on_attach = function(client, bufnr)
         if vim.bo[bufnr].filetype == "python" then
             local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -38,11 +39,14 @@ lspconfig.pyright.setup({
 
             -- Enable auto-format on save
             if client.server_capabilities.documentFormattingProvider then
-                vim.cmd [[augroup Format]]
-                vim.cmd [[autocmd! * <buffer>]]
-                vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)]]
-                vim.cmd [[augroup END]]
+                vim.api.nvim_create_augroup("Format", { clear = true })
+                vim.api.nvim_create_autocmd("BufWritePre", {
+                    group = "Format",
+                    buffer = bufnr,
+                    callback = function() vim.lsp.buf.format({ timeout_ms = 1000 }) end
+                })
             end
+
         end
     end,
     flags = {
@@ -55,7 +59,20 @@ lspconfig.pyright.setup({
                 useLibraryCodeForTypes = true,
                 diagnosticMode = "workspace",
                 typeCheckingMode = "basic",
-                stubPath = "/Users/tahseen/.local/share/tazvim/stub"
+                -- stubPath = "/Users/tahseen/.local/share/tazvim/stub",
+                inlayHints = {
+                    variableTypes = true,
+                    functionReturnTypes = true,
+                    callArgumentNames = false,
+                    parameterNames = true,
+                    parameterTypes = false,
+                    objectLiteralTypes = false,
+                    includeInlayFunctionLikeReturnTypeHints = true,
+                    includeInlayParameterNameHints = "literals",
+                    includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                    includeInlayPropertyDeclarationTypeHints = true,
+                    includeInlayVariableTypeHints = true,
+                },
             }
         }
     }
@@ -81,15 +98,17 @@ lspconfig.clangd.setup({
                 vim.api.nvim_create_autocmd("BufWritePre", {
                     buffer = bufnr,
                     callback = function()
-                         -- Save the current cursor position
-  local current_pos = vim.api.nvim_win_get_cursor(0)
-  -- Format the entire file
-  vim.api.nvim_command('normal! gg=G')
-  -- Restore the cursor position
-  vim.api.nvim_win_set_cursor(0, current_pos)
+                        -- Save the current cursor position
+                        local current_pos = vim.api.nvim_win_get_cursor(0)
+                        -- Format the entire file
+                        vim.api.nvim_command('normal! gg=G')
+                        -- Restore the cursor position
+                        vim.api.nvim_win_set_cursor(0, current_pos)
                     end
                 })
             end
+
+            inlayhints.on_attach(client, bufnr)
         end
     end,
     flags = {
@@ -297,4 +316,5 @@ lspconfig.rust_analyzer.setup({
         }
     }
 })
+
 
