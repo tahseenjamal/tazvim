@@ -1,5 +1,7 @@
 -- Setup LSP servers
 local lspconfig = require'lspconfig'
+local inlay_hints = require('inlay-hints')
+
 
 
 -- Setup Mason
@@ -108,7 +110,7 @@ lspconfig.clangd.setup({
                 })
             end
 
-            inlayhints.on_attach(client, bufnr)
+            inlay_hints.on_attach(client, bufnr)
         end
     end,
     flags = {
