@@ -1,6 +1,6 @@
 local alpha = require('alpha')
 local dashboard = require('alpha.themes.dashboard')
-
+local nvim_folder = nvim_appname and nvim_appname or "nvim"
 
 
 
@@ -23,7 +23,7 @@ dashboard.section.buttons.val = {
     dashboard.button(" n ", "    New file", ":ene <BAR> startinsert <CR>"),
     dashboard.button(" f ", "    Find file", ":Telescope find_files<CR>"),
     dashboard.button(" r ", "    Recents", ":Telescope oldfiles<CR>"),
-    dashboard.button(" s ", "    Settings", ":Telescope find_files cwd=~/.config/nvim<CR>"),
+    dashboard.button(" s ", "    Settings", ":Telescope find_files cwd=~/.config/" .. nvim_folder .. "<CR>"),
     dashboard.button(" t ", "    Themes", ":Themery<CR>"),
     dashboard.button(" q ", "    Quit", ":qa<CR>"),
 }
