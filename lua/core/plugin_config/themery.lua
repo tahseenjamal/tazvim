@@ -2,7 +2,7 @@
 local nvim_appname = vim.fn.getenv("NVIM_APPNAME")
 
 -- Set the base path
-local base_path = "~/.config/"
+local base_path = vim.fn.expand("~/.config/")
 
 -- If NVIM_APPNAME is set, use it; otherwise default to 'nvim'
 local nvim_folder = nvim_appname and nvim_appname or "nvim"
