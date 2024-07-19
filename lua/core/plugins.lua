@@ -80,7 +80,7 @@ return require('packer').startup(function(use)
     -- Auto pairs
     use 'windwp/nvim-autopairs'
 
-    -- use 'folke/which-key.nvim'
+    use 'folke/which-key.nvim'
 
     -- Comment plugin
     use 'numToStr/Comment.nvim'
