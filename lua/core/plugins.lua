@@ -41,7 +41,7 @@ return require('packer').startup(function(use)
     -- lsp inlay hints
      use {
         "MysticalDevil/inlay-hints.nvim",
-    requires = { "neovim/nvim-lspconfig" },
+        requires = { "neovim/nvim-lspconfig" },
     }
 
 
