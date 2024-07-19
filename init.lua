@@ -6,10 +6,15 @@ vim.opt.cursorline = true
 vim.o.guifont = "MesloLGS NF:h14"
 
 
+local nvim_appname = vim.fn.getenv("NVIM_APPNAME")
+local base_path = vim.fn.expand("~/.config/")
+local nvim_folder = nvim_appname and nvim_appname or "nvim"
+
 -- Function to reload plugins.lua and run :PackerSync
 function ReloadConfigAndSync()
   -- Source the plugins.lua file
-  vim.cmd("source ~/.config/nvim/lua/core/plugins.lua")
+  -- vim.cmd("source ~/.config/nvim/lua/core/plugins.lua")
+  vim.cmd("source " .. base_path .. nvim_folder .. "/lua/core/plugins.lua")
   -- Run PackerSync
   vim.cmd("PackerSync")
 end
@@ -18,7 +23,9 @@ end
 vim.cmd([[
   augroup PackerUserConfig
     autocmd!
-    autocmd BufWritePost ~/.config/nvim/lua/core/plugins.lua lua ReloadConfigAndSync()
+    " autocmd BufWritePost ~/.config/nvim/lua/core/plugins.lua lua ReloadConfigAndSync()
+    autocmd BufWritePost ]] .. base_path .. nvim_folder .. [[/lua/core/plugins.lua lua ReloadConfigAndSync()
+
   augroup end
 ]])
 
