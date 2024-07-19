@@ -1,6 +1,6 @@
 local builtin = require('telescope.builtin')
 local nvim_appname = vim.fn.getenv("NVIM_APPNAME")
-local base_path = "~/.config/"
+local base_path = vim.fn.expand("~/.config/")
 local nvim_folder = nvim_appname and nvim_appname or "nvim"
 local config_path = base_path .. nvim_folder 
 
