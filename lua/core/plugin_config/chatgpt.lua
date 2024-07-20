@@ -5,7 +5,6 @@ local nvim_folder = nvim_appname and nvim_appname or "nvim"
 
 require('chatgpt').setup({
     api_key = vim.fn.getenv('OPENAI_API_KEY'),  -- Fetch the API key from environment variables
-    -- actions_paths = { "~/.config/nvim/lua/settings/gpt_actions.json" },
     actions_paths = { base_path .. nvim_folder .. "/lua/settings/gpt_actions.json" },
     openai_params = {
         model = "gpt-4",
