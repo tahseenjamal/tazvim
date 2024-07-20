@@ -34,9 +34,9 @@ require('core.plugin_config.inlay-hints')
 require('core.plugin_config.mason')
 
 
-vim.defer_fn(function()
-    require("settings.theme")
-end, 1)
+-- vim.defer_fn(function()
+--     require("settings.theme")
+-- end, 1)
 
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
