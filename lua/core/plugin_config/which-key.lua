@@ -59,33 +59,30 @@ wk.setup {
     },
 }
 
+-- local mappings = {
+--     g = {
+--         name = "Go",
+--         d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
+--         i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" }
+--     },
+--     K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover Documentation" },
+--     ["gk"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
+--     ["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename Symbol" }
+-- }
+--
+
 local mappings = {
-    g = {
+    ["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename Symbol" },
+    ["K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover Documentation" },
+    ["g"] = {
         name = "Go",
-        d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
-        i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" }
+        ["d"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
+        ["i"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" },
     },
-    K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover Documentation" },
     ["gk"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
-    ["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename Symbol" }
 }
 
 wk.register(mappings, { noremap=true, silent=true })
 
 
 
--- -- Disable which-key when lazygit is opened
--- vim.api.nvim_create_autocmd("User", {
---   pattern = "LazygitEnter",
---   callback = function()
---     vim.b.which_key_disable = true
---   end,
--- })
---
--- -- Re-enable which-key when lazygit is closed
--- vim.api.nvim_create_autocmd("User", {
---   pattern = "LazygitExit",
---   callback = function()
---     vim.b.which_key_disable = false
---   end,
--- })
