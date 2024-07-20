@@ -7,7 +7,6 @@ local config_path = base_path .. nvim_folder
 -- Construct the full path
 local theme_path = base_path .. nvim_folder .. "/lua/settings/theme.lua"
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { noremap = true, silent = true })
--- vim.keymap.set('n', '<leader>fs', function() builtin.find_files({ cwd = "~/.config/nvim" }) end, { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>fs', function() builtin.find_files({ cwd = config_path }) end, { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { noremap = true, silent = true })
