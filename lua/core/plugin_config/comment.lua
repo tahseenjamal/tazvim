@@ -15,16 +15,16 @@ require('Comment').setup({
     ---LHS of operator-pending mappings in NORMAL and VISUAL mode
     opleader = {
         ---Line-comment keymap
-        line = 'gc',
+        line = 'gC',
         ---Block-comment keymap
-        block = 'gb',
+        block = 'gB',
     },
     ---LHS of extra mappings
     extra = {
         ---Add comment on the line above
-        above = 'gcO',
+        above = 'gK',
         ---Add comment on the line below
-        below = 'gco',
+        below = 'gJ',
         ---Add comment at the end of line
         eol = 'gcA',
     },
@@ -34,7 +34,7 @@ require('Comment').setup({
         ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
         basic = true,
         ---Extra mapping; `gco`, `gcO`, `gcA`
-        extra = true,
+        extra = false,
     },
     ---Function to call before (un)comment
     pre_hook = nil,
