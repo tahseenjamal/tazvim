@@ -49,7 +49,14 @@ You should have neovim installed on your system along with git, npm, python3, C/
 2.  **Clone the repository**:
 
     ```
-    brew install ripgrep lazygit
+    brew install ripgrep lazygit silicon
+    ```
+
+    or in case of linux
+
+    ```
+    sudo apt-get install ripgrep lazygit libxfixes-dev libxcb-shape0-dev libxcb-xfixes0-dev gir1.2-harfbuzz-0.0 libgraphite2-dev libharfbuzz-icu0 libharfbuzz-gobject0 libharfbuzz-dev
+    cargo install silicon
     ```
 
 3.  **Run nvim**:
