@@ -59,17 +59,6 @@ wk.setup {
     },
 }
 
--- local mappings = {
---     g = {
---         name = "Go",
---         d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
---         i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" }
---     },
---     K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover Documentation" },
---     ["gk"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
---     ["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename Symbol" }
--- }
---
 
 local mappings = {
     ["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename Symbol" },
