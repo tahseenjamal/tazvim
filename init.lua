@@ -55,3 +55,10 @@ for i = 1, 9 do
 end
 
 
+-- Set the working directory to the directory of the current working directory
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        vim.cmd("silent! lcd " .. vim.fn.expand("%:p:h"))
+    end
+})
+
