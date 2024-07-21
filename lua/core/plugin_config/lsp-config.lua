@@ -9,7 +9,7 @@ require('mason').setup()
 
 -- Setup Mason LSPConfig
 require('mason-lspconfig').setup({
-    ensure_installed = { 'pyright', 'clangd', 'gopls', 'rust_analyzer' },
+    ensure_installed = { 'basedpyright', 'clangd', 'gopls', 'rust_analyzer' },
     automatic_installation = true -- Automatically install configured servers
 })
 
