@@ -32,6 +32,9 @@ require('core.plugin_config.rust')
 require('core.plugin_config.crates')
 require('core.plugin_config.inlay-hints')
 require('core.plugin_config.mason')
+require('core.plugin_config.nvim-surround')
+require('core.plugin_config.tailwindcss-colorizer-cmp')
+require('core.plugin_config.lsp-inlayhints')
 
 
 -- vim.defer_fn(function()
