@@ -10,8 +10,8 @@ inlay_hints.setup({
   options = {
     highlight = "Comment",
     prefix = " » ",
-    aligned = false,
-    only_current_line = false,
+    aligned = true,
+    only_current_line = true,
     show_parameter_hints = true,
     show_type_hints = true,
     enabled = { "TypeHint", "ChainingHint", "ParameterHint" },
@@ -37,6 +37,7 @@ inlay_hints.setup({
       only_current_line = false,
       prefix = " -> ",
     },
+
   },
 })
 
