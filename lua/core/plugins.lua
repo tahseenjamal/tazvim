@@ -20,6 +20,8 @@ return require('packer').startup(function(use)
         requires = "anuvyklack/middleclass"
     }
 
+    use 'roobert/tailwindcss-colorizer-cmp.nvim'
+
     -- NeoVim Tree
     use {
         "nvim-neo-tree/neo-tree.nvim",
@@ -38,9 +40,17 @@ return require('packer').startup(function(use)
     -- rust vim
     use 'rust-lang/rust.vim'
 
+    use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+    use 'lvimuser/lsp-inlayhints.nvim'
+
+    use {
+        'MysticalDevil/inlay-hints.nvim',
+        reuires = {'neo4j/neovim-lspconfig'},
+    }
+
     -- lsp inlay hints
      use {
-        "MysticalDevil/inlay-hints.nvim",
+        'lvimuser/lsp-inlayhints.nvim',
         requires = { "neovim/nvim-lspconfig" },
     }
 
@@ -172,11 +182,6 @@ return require('packer').startup(function(use)
     use({
         "kylechui/nvim-surround",
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-        config = function()
-            require("nvim-surround").setup({
-                -- Configuration here, or leave empty to use defaults
-            })
-        end
     })
 
 
