@@ -118,7 +118,6 @@ lspconfig.basedpyright.setup({
                 typeCheckingMode = "basic",
                 autoImportCompletions = true,
                 autoSearchPaths = true,
-                useLibraryCodeForTypes = true,
             } 
         }
     },
