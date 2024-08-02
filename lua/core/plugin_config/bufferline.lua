@@ -20,6 +20,7 @@ require("bufferline").setup{
             -- fg = '#FFFFFF', -- White color for text
             fg = '#FF0000', -- Red background color
             gui = 'bold,underline', -- Bold and underlined
+            underline = true,
         },
         numbers_selected = {
             -- fg = '#FFFFFF', -- White color for text
