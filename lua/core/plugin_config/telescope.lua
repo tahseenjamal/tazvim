@@ -13,7 +13,7 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, { noremap = true, silent = tr
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>cs', '<cmd>Telescope colorscheme<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>m', ':BufferLinePick<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>h', ':BufferLinePick<CR>', { noremap = true, silent = true })
 
 local telescope = require('telescope')
 local actions = require('telescope.actions')
