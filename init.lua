@@ -62,3 +62,10 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end
 })
 
+
+-- Additional configuration for user experience
+-- Enable Emmet for HTML and CSS files
+vim.g.user_emmet_leader_key = '<C-Z>'
+
+-- Auto-close HTML tags
+vim.g.closetag_filenames = '*.html,*.xhtml,*.phtml'
