@@ -8,7 +8,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
     sources = {
         null_ls.builtins.formatting.prettierd.with({
-            filetypes = { "javascript", "typescript", "css", "html", "json", "yaml", "markdown", "lua" }, -- Add your supported filetypes
+            filetypes = { "json", "yaml", "markdown", "lua" }, -- Add your supported filetypes
             extra_args = { "--single-quote", "--jsx-single-quote" }
         }),
         -- null_ls.builtins.diagnostics.revive,  -- Use revive instead of golint
@@ -36,6 +36,6 @@ null_ls.setup({
 vim.api.nvim_create_augroup("FormatAutogroup", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePre", {
     group = "FormatAutogroup",
-    pattern = "*.js,*.jsx,*.ts,*.tsx,*.json,*.html,*.css,*.md,*.go,*.py,*.c,*.cpp",
-    callback = function() vim.lsp.buf.format({ async = true }) end,
+    pattern = "*.js,*.jsx,*.ts,*.tsx,*.json,*.md,*.go,*.py,*.c,*.cpp,*.html,*.css",
+    callback = function() vim.lsp.buf.format({ async = false }) end,
 })

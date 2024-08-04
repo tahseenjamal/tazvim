@@ -20,6 +20,17 @@ return require('packer').startup(function(use)
         requires = "anuvyklack/middleclass"
     }
 
+      use 'L3MON4D3/LuaSnip' -- Snippet engine
+  use 'saadparwaiz1/cmp_luasnip' -- Snippet source for nvim-cmp
+  use 'rafamadriz/friendly-snippets' -- Collection of snippets
+
+
+    -- Additional plugins for HTML
+    use 'mattn/emmet-vim' -- Emmet for faster HTML and CSS workflow
+    use 'alvan/vim-closetag' -- Auto-close HTML tags
+    use 'othree/html5.vim' -- HTML5 syntax support
+
+
     use 'roobert/tailwindcss-colorizer-cmp.nvim'
 
     -- NeoVim Tree
@@ -41,7 +52,6 @@ return require('packer').startup(function(use)
     use 'rust-lang/rust.vim'
 
     use 'jose-elias-alvarez/nvim-lsp-ts-utils'
-    use 'lvimuser/lsp-inlayhints.nvim'
 
     use {
         'MysticalDevil/inlay-hints.nvim',
@@ -130,8 +140,6 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
-    use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-    use 'L3MON4D3/LuaSnip' -- Snippets plugin
     use {
         'olexsmir/gopher.nvim',
         build = function() 

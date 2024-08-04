@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "go", "python", "html" },
+  ensure_installed = {'go', 'python', 'rust', 'c', 'php','svelte','zig'},
   sync_install = false,
   auto_install = true,
 
