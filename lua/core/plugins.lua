@@ -15,6 +15,8 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     -- My plugins here
 
+    use 'echasnovski/mini.icons'
+
     -- Windows plugin
     use { "anuvyklack/windows.nvim",
         requires = "anuvyklack/middleclass"
