@@ -1,7 +1,7 @@
 local wk = require('which-key')
 
 wk.setup {
-    triggers = {},
+    -- triggers = {},
     -- plugins = {
     --     marks = true, -- shows a list of your marks on ' and `
     --     registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
@@ -29,15 +29,15 @@ wk.setup {
     -- },
 }
 
-local mappings = {
-    ["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename Symbol" },
-    ["K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover Documentation" },
-    ["g"] = {
-        name = "Go",
-        ["d"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
-        ["i"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" },
-    },
-    ["gk"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
-}
+-- local mappings = {
+    -- ["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename Symbol" },
+    -- ["K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover Documentation" },
+    -- ["g"] = {
+    --     name = "Go",
+    --     ["d"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
+    --     ["i"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" },
+    -- },
+    -- ["gk"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
+-- }
 
-wk.register(mappings, { noremap=true, silent=true })
+-- wk.register(mappings, { noremap=true, silent=true })
