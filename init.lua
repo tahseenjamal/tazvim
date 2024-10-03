@@ -1,71 +1,51 @@
-vim.opt.termguicolors = true
-vim.opt.cursorline = true
+require 'custom.options'
+require 'custom.keymaps'
 
-vim.o.guifont = "MesloLGS NF:h14"
-
-local nvim_appname = vim.fn.getenv("NVIM_APPNAME")
-local base_path = vim.fn.expand("~/.config/")
-local nvim_folder = nvim_appname and nvim_appname or "nvim"
-
--- Function to reload plugins.lua and run :PackerSync
-function ReloadConfigAndSync()
-  vim.cmd("source " .. base_path .. nvim_folder .. "/lua/core/plugins.lua")
-  vim.cmd("PackerSync")
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
+  local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+  if vim.v.shell_error ~= 0 then
+    error('Error cloning lazy.nvim:\n' .. out)
+  end
 end
+vim.opt.rtp:prepend(lazypath)
 
--- Set up an autocommand to watch for changes to plugins.lua
-vim.cmd([[
-  augroup PackerUserConfig
-    autocmd!
-    autocmd BufWritePost ]] .. base_path .. nvim_folder .. [[/lua/core/plugins.lua lua ReloadConfigAndSync()
+-- Set up plugins
+require('lazy').setup {
+  require 'custom.plugins.alpha',
+  require 'custom.plugins.autopairs',
+  require 'custom.plugins.bufferline',
+  require 'custom.plugins.conform',
+  require 'custom.plugins.crates',
+  require 'custom.plugins.flash',
+  require 'custom.plugins.gitsigns',
+  require 'custom.plugins.gopher',
+  require 'custom.plugins.hlchunk',
+  require 'custom.plugins.lazydev',
+  require 'custom.plugins.lazygit',
+  require 'custom.plugins.lint',
+  require 'custom.plugins.lualine',
+  require 'custom.plugins.mini',
+  require 'custom.plugins.neo-tree',
+  require 'custom.plugins.noice',
+  require 'custom.plugins.nvim-ts-autotag',
+  require 'custom.plugins.nvim-cmp',
+  require 'custom.plugins.nvim-lspconfig',
+  require 'custom.plugins.nvim-silicon',
+  require 'custom.plugins.nvim-treesitter',
+  require 'custom.plugins.nvim-window',
+  require 'custom.plugins.telescope',
+  require 'custom.plugins.themery',
+  require 'custom.plugins.themes',
+  require 'custom.plugins.todo-comments',
+  require 'custom.plugins.toggleterm',
+  require 'custom.plugins.vim-bbye',
+  require 'custom.plugins.vim-move',
+  require 'custom.plugins.vim-sleuth',
+  require 'custom.plugins.which-key',
+  require 'custom.plugins.windows',
+  require 'custom.plugins.luvit-meta',
+}
 
-  augroup end
-]])
-
-require("core.keymaps")
-require("core.plugins")
-pcall(require, "core.plugin_config")
-
--- Automatically clear search highlights after searching
-vim.api.nvim_exec([[
-  augroup ClearSearchHL
-    autocmd!
-    autocmd CmdlineEnter / :set hlsearch
-    autocmd CmdlineLeave / :set nohlsearch
-  augroup END
-]], false)
-
--- Function to switch to buffer by position
-local function switch_to_buffer_by_position(position)
-    local buffers = vim.fn.getbufinfo({ buflisted = 1 })
-    if position <= #buffers then
-        vim.api.nvim_set_current_buf(buffers[position].bufnr)
-    else
-        print("Buffer " .. position .. " does not exist")
-    end
-end
-
--- Key mappings for Ctrl+1 to Ctrl+9
-for i = 1, 9 do
-    vim.api.nvim_set_keymap('n', '<C-' .. i .. '>', '', {
-        noremap = true,
-        callback = function() switch_to_buffer_by_position(i) end,
-        silent = true
-    })
-end
-
-
--- Set the working directory to the directory of the current working directory
-vim.api.nvim_create_autocmd("VimEnter", {
-    callback = function()
-        vim.cmd("silent! lcd " .. vim.fn.expand("%:p:h"))
-    end
-})
-
-
--- Additional configuration for user experience
--- Enable Emmet for HTML and CSS files
-vim.g.user_emmet_leader_key = '<C-Z>'
-
--- Auto-close HTML tags
-vim.g.closetag_filenames = '*.html,*.xhtml,*.phtml'
+require 'custom.alpha'
