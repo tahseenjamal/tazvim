@@ -6,12 +6,6 @@ vim.keymap.set('n', '<leader>th', ':Themery <CR>', opts)
 -- Choose window using alphabets
 vim.keymap.set('n', '<leader>w', ":lua require('nvim-window').pick()<CR>", opts)
 
--- Move lines in normal mode and blocks in visual mode
-vim.api.nvim_set_keymap('n', '<C-K>', '<Plug>MoveLineUp', {})
-vim.api.nvim_set_keymap('n', '<C-J>', '<Plug>MoveLineDown', {})
-vim.api.nvim_set_keymap('x', '<C-K>', '<Plug>MoveBlockUp', {})
-vim.api.nvim_set_keymap('x', '<C-J>', '<Plug>MoveBlockDown', {})
-
 -- Move to the next buffer using Tab
 vim.api.nvim_set_keymap('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = true })
 -- Move to the previous buffer using Shift-Tab

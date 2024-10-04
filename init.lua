@@ -41,7 +41,6 @@ require('lazy').setup {
   require 'custom.plugins.todo-comments',
   require 'custom.plugins.toggleterm',
   require 'custom.plugins.vim-bbye',
-  require 'custom.plugins.vim-move',
   require 'custom.plugins.vim-sleuth',
   require 'custom.plugins.which-key',
   require 'custom.plugins.windows',
