@@ -8,10 +8,6 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		"mfussenegger/nvim-dap", -- (optional) only if you use `gopher.dap`
 	},
-	-- (optional) will update plugin's deps on every update
-	build = function()
-		vim.cmd("GoInstallDeps")
-	end,
 	opts = {},
 	config = function()
 		require("gopher").setup({
