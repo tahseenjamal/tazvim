@@ -7,10 +7,10 @@ vim.keymap.set('n', '<leader>th', ':Themery <CR>', opts)
 vim.keymap.set('n', '<leader>w', ":lua require('nvim-window').pick()<CR>", opts)
 
 -- Move lines in normal mode and blocks in visual mode
-vim.api.nvim_set_keymap('n', '<C-k>', '<Plug>MoveLineUp', {})
-vim.api.nvim_set_keymap('n', '<C-j>', '<Plug>MoveLineDown', {})
-vim.api.nvim_set_keymap('x', '<C-k>', '<Plug>MoveBlockUp', {})
-vim.api.nvim_set_keymap('x', '<C-j>', '<Plug>MoveBlockDown', {})
+vim.api.nvim_set_keymap('n', '<C-K>', '<Plug>MoveLineUp', {})
+vim.api.nvim_set_keymap('n', '<C-J>', '<Plug>MoveLineDown', {})
+vim.api.nvim_set_keymap('x', '<C-K>', '<Plug>MoveBlockUp', {})
+vim.api.nvim_set_keymap('x', '<C-J>', '<Plug>MoveBlockDown', {})
 
 -- Move to the next buffer using Tab
 vim.api.nvim_set_keymap('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = true })
@@ -92,7 +92,7 @@ vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
--- vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
--- vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
--- vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
--- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<S-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<S-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<S-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<S-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
