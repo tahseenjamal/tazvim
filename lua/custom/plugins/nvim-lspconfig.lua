@@ -108,18 +108,7 @@ return {
     local servers = {
       clangd = {
         settings = {
-          clangd = {
-            filetypes = { 'c', 'cpp' },
-            usePlaceholders = true,
-            completeUnimported = true,
-            semanticHighlighting = true,
-            InlayHints = {
-              Designators = true,
-              Enabled = true,
-              ParameterNames = true,
-              DeducedTypes = true,
-            },
-          },
+          clangd = {},
         },
       },
       gopls = {
