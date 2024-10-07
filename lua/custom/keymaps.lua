@@ -53,7 +53,7 @@ vim.api.nvim_set_keymap('n', '<leader>bs', ':SplitAllBuffers<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>tt', ':ToggleTerm<CR>', opts)
 
 -- Close Buffer
-vim.keymap.set('n', '<leader>bc', ':bd!<CR>', opts)
+vim.keymap.set('n', '<leader>bd', ':bd!<CR>:bprevious<CR>', opts)
 -- New Buffer
 vim.keymap.set('n', '<leader>bn', '<cmd> enew <CR>', opts)
 
