@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	require("custom.plugins.alpha"),
 	require("custom.plugins.autopairs"),
-	require("custom.plugins.bufferline"),
+	require("custom.plugins.barbar"),
 	require("custom.plugins.conform"),
 	require("custom.plugins.crates"),
 	require("custom.plugins.flash"),
