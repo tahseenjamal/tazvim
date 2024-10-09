@@ -67,9 +67,11 @@ vim.api.nvim_set_keymap("i", "<C-a>", "<Esc>O", opts)
 -- Tabs
 vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", opts) -- open new tab
 vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", opts) -- close current tab
+-- shortcut to pick up the tab
+vim.api.nvim_set_keymap("v", "<leader>tp", ":BufferPick", opts)
 
 -- Nvim Silicon screenshot of visually selected
-vim.api.nvim_set_keymap("v", "<leader>y", ":Silicon<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>y", ":Silicon<CR>", opts)
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
