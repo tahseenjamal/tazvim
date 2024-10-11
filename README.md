@@ -1,9 +1,12 @@
-            .___________.     ___       ________  ____    ____  __  .___  ___.
-            |           |    /   \     |       /  \   \  /   / |  | |   \/   |
-            `---|  |----`   /  ^  \    `---/  /    \   \/   /  |  | |  \  /  |
-                |  |       /  /_\  \      /  /      \      /   |  | |  |\/|  |
-                |  |      /  _____  \    /  /----.   \    /    |  | |  |  |  |
-                |__|     /__/     \__\  /________|    \__/     |__| |__|  |__|
+
+                                ████████╗ █████╗ ███████╗██╗   ██╗██╗███╗   ███╗
+                                ╚══██╔══╝██╔══██╗╚══███╔╝██║   ██║██║████╗ ████║
+                                   ██║   ███████║  ███╔╝ ██║   ██║██║██╔████╔██║
+                                   ██║   ██╔══██║ ███╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║
+                                   ██║   ██║  ██║███████╗ ╚████╔╝ ██║██║ ╚═╝ ██║
+                                   ╚═╝   ╚═╝  ╚═╝╚══════╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
+                                                
+
 
 TazVim is a lightweight and customizable Neovim configuration, inspired by LazyVim. This configuration is designed to be minimal yet powerful, providing an efficient coding environment with an elegant user interface.
 
@@ -33,7 +36,7 @@ You should have neovim installed on your system along with git, npm, python3, C/
 - **Comment**: Added Comment plugin for commenting code.
 - **Prettier**: Added Prettier for code formatting using Null-LS.
 - **AutoPairs**: Added AutoPairs for auto closing brackets.
-- **Bufferline**: Added Bufferline for buffer management.
+- **Barbar**: Added buffer management.
 - **Gitsigns**: Added Gitsigns for git integration.
 
 ## Installation
