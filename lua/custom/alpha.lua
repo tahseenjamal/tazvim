@@ -14,6 +14,7 @@ dashboard.section.header.val = {
 	[[              ██║   ██╔══██║ ███╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║             ]],
 	[[              ██║   ██║  ██║███████╗ ╚████╔╝ ██║██║ ╚═╝ ██║             ]],
 	[[              ╚═╝   ╚═╝  ╚═╝╚══════╝  ╚═══╝  ╚═╝╚═╝     ╚═╝             ]],
+	[[		https://github.com/tahseenjamal/tazvim			  ]],
 }
 
 -- Center align the buttons with spaces
