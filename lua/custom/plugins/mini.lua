@@ -25,8 +25,8 @@ return { -- Collection of various small independent plugins/modules
 
 				-- Module mappings. Use `''` (empty string) to disable one.
 				mappings = {
-					add = "ya", -- Add surrounding in Normal and Visual modes
-					delete = "yd", -- Delete surrounding
+					add = "ys", -- Add surrounding in Normal and Visual modes
+					delete = "ds", -- Delete surrounding
 					find = "yf", -- Find surrounding (to the right)
 					find_left = "yF", -- Find surrounding (to the left)
 					highlight = "yh", -- Highlight surrounding
