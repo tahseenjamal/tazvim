@@ -86,9 +86,9 @@ vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
---
---  See `:help wincmd` for a list of all window commands
-vim.keymap.set("n", "<S-Left>", "<C-w><C-h>", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<S-Right>", "<C-w><C-l>", { desc = "Move focus to the right window" })
-vim.keymap.set("n", "<S-Down>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
-vim.keymap.set("n", "<S-Up>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+--  Below should be set in kitty and in caes of iterm2 it should be Esc in the profile->key
+-- macos_option_as_alt yes
+vim.keymap.set("n", "<M-h>", "<C-w>h", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<M-j>", "<C-w>j", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<M-k>", "<C-w>k", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<M-l>", "<C-w>l", { desc = "Move focus to the upper window" })
