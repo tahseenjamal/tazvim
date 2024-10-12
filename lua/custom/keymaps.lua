@@ -57,7 +57,7 @@ vim.keymap.set("n", "<leader>bd", ":bd!<CR>:bprevious<CR>", opts)
 -- New Buffer
 vim.keymap.set("n", "<leader>bn", "<cmd> enew <CR>", opts)
 -- Choose buffer
-vim.api.nvim_set_keymap("n", "<leader>bp", ":BufferLinePick<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>bp", ":BufferPick<CR>", opts)
 
 -- Go to end in insert mode - end of line, below and above
 vim.api.nvim_set_keymap("i", "<C-e>", "<Esc>A", opts)
@@ -67,8 +67,6 @@ vim.api.nvim_set_keymap("i", "<C-a>", "<Esc>O", opts)
 -- Tabs
 vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", opts) -- open new tab
 vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", opts) -- close current tab
--- shortcut to pick up the tab
-vim.api.nvim_set_keymap("v", "<leader>tp", ":BufferPick", opts)
 
 -- Nvim Silicon screenshot of visually selected
 vim.api.nvim_set_keymap("v", "<leader>y", ":Silicon<CR>", opts)
