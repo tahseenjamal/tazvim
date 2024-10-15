@@ -35,6 +35,7 @@ require("lazy").setup({
 	require("custom.plugins.nvim-silicon"),
 	require("custom.plugins.nvim-treesitter"),
 	require("custom.plugins.nvim-window"),
+	require("custom.plugins.screenkey"),
 	require("custom.plugins.telescope"),
 	require("custom.plugins.themery"),
 	require("custom.plugins.themes"),
@@ -45,6 +46,7 @@ require("lazy").setup({
 	require("custom.plugins.which-key"),
 	require("custom.plugins.windows"),
 	require("custom.plugins.luvit-meta"),
+	require("custom.plugins.undotree"),
 })
 
 require("custom.alpha")
