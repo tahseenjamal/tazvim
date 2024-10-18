@@ -13,10 +13,9 @@ return {
 	opts = {
 		filesystem = {
 			window = {
-				border = "none",
-				mappings = {
-					["\\"] = "close_window",
-				},
+				position = "right",
+				width = 30,
+				border = "single",
 			},
 		},
 	},

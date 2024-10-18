@@ -16,6 +16,7 @@ require("lazy").setup({
 	require("custom.plugins.alpha"),
 	require("custom.plugins.autopairs"),
 	require("custom.plugins.barbar"),
+	require("custom.plugins.chatgpt"),
 	require("custom.plugins.conform"),
 	require("custom.plugins.crates"),
 	require("custom.plugins.flash"),
