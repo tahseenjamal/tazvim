@@ -97,10 +97,10 @@ vim.keymap.set("n", "<M-l>", "<C-w>l", { desc = "Move focus to the upper window"
 vim.keymap.set("n", "<leader>st", ":Screenkey toggle<CR>", opts)
 
 -- ChatGPT
-vim.keymap.set("n", "<leader>gp", ":ChatGPT<CR>", opts)
-vim.keymap.set("n", "<leader>gc", ":ChatGPTRun complete_code<CR>", opts)
-vim.keymap.set("n", "<leader>ge", ":ChatGPTEditWithInstructions<CR>", opts)
-vim.keymap.set("v", "<leader>ge", ":ChatGPTEditWithInstructions<CR>", opts)
+-- vim.keymap.set("n", "<leader>gp", ":ChatGPT<CR>", opts)
+-- vim.keymap.set("n", "<leader>gc", ":ChatGPTRun complete_code<CR>", opts)
+-- vim.keymap.set("n", "<leader>ge", ":ChatGPTEditWithInstructions<CR>", opts)
+-- vim.keymap.set("v", "<leader>ge", ":ChatGPTEditWithInstructions<CR>", opts)
 
 -- Noice Clear
 vim.keymap.set("n", "M-d", ":NoiceDismiss<CR>", opts)
