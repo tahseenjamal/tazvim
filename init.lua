@@ -23,10 +23,12 @@ require("lazy").setup({
 	require("custom.plugins.gitsigns"),
 	require("custom.plugins.gopher"),
 	require("custom.plugins.hlchunk"),
+	require("custom.plugins.inc-rename"),
 	require("custom.plugins.lazydev"),
 	require("custom.plugins.lazygit"),
 	require("custom.plugins.lint"),
 	require("custom.plugins.lualine"),
+	require("custom.plugins.markdown"),
 	require("custom.plugins.mini"),
 	require("custom.plugins.neo-tree"),
 	require("custom.plugins.noice"),
@@ -36,10 +38,14 @@ require("lazy").setup({
 	require("custom.plugins.nvim-silicon"),
 	require("custom.plugins.nvim-treesitter"),
 	require("custom.plugins.nvim-window"),
+	-- require("custom.plugins.oil"),
 	require("custom.plugins.screenkey"),
+	require("custom.plugins.snacks"),
+	require("custom.plugins.table-mode"),
 	require("custom.plugins.telescope"),
 	require("custom.plugins.themery"),
 	require("custom.plugins.themes"),
+	require("custom.plugins.tmux-navigator"),
 	require("custom.plugins.todo-comments"),
 	require("custom.plugins.toggleterm"),
 	require("custom.plugins.vim-bbye"),
@@ -51,4 +57,3 @@ require("lazy").setup({
 })
 
 require("custom.alpha")
-

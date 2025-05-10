@@ -1,5 +1,13 @@
 local opts = { noremap = true, silent = true }
 
+-- Centering move during selected search
+vim.keymap.set("n", "n", "nzzzv", opts)
+vim.keymap.set("n", "N", "Nzzzv", opts)
+
+--Visual select and move laterally using > and < sign
+vim.keymap.set("v", "<", "<gv", opts)
+vim.keymap.set("v", ">", ">gv", opts)
+
 -- Themery
 vim.keymap.set("n", "<leader>th", ":Themery <CR>", opts)
 
@@ -84,15 +92,6 @@ vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
--- Keybinds to make split navigation easier.
--- Use CTRL+<hjkl> to switch between windows
--- Below should be set in kitty and in caes of iterm2 it should be Esc in the profile->key
--- macos_option_as_alt yes
-vim.keymap.set("n", "<M-h>", "<C-w>h", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<M-j>", "<C-w>j", { desc = "Move focus to the right window" })
-vim.keymap.set("n", "<M-k>", "<C-w>k", { desc = "Move focus to the lower window" })
-vim.keymap.set("n", "<M-l>", "<C-w>l", { desc = "Move focus to the upper window" })
-
 -- Screen Keycast
 vim.keymap.set("n", "<leader>st", ":Screenkey toggle<CR>", opts)
 
@@ -106,3 +105,16 @@ vim.keymap.set("v", "<leader>ge", ":ChatGPTEditWithInstructions<CR>", opts)
 vim.keymap.set("n", "M-d", ":NoiceDismiss<CR>", opts)
 vim.keymap.set("v", "M-d", ":NoiceDismiss<CR>", opts)
 vim.keymap.set("i", "M-d", ":NoiceDismiss<CR>", opts)
+
+vim.api.nvim_set_keymap("n", "<M-h>", "h", opts)
+vim.api.nvim_set_keymap("n", "<M-j>", "j", opts)
+vim.api.nvim_set_keymap("n", "<M-k>", "k", opts)
+vim.api.nvim_set_keymap("n", "<M-l>", "l", opts)
+
+--Option for mini files
+vim.keymap.set("n", "<leader>m", "<cmd>lua MiniFiles.open()<CR>", { desc = "Open mini.files" })
+
+--Option for fast file rename using snacks leader sn
+vim.keymap.set("n", "<leader>br", function()
+	Snacks.rename.rename_file()
+end, { desc = "Rename current file" })

@@ -1,5 +1,3 @@
-vim.g.python3_host_prog = '/usr/local/bin/python3'
-
 -- True color
 vim.opt.termguicolors = true
 
@@ -85,3 +83,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.g.rustfmt_auto_save = 1
 
 vim.opt.fillchars:append({ eob = " " })
+
+vim.keymap.set("n", "<leader>rn", function()
+	return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true })

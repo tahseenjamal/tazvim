@@ -9,6 +9,8 @@ return { -- Collection of various small independent plugins/modules
 		--  - ci'  - [C]hange [I]nside [']quote
 		require("mini.ai").setup({ n_lines = 500 })
 
+		require("mini.files").setup({})
+
 		-- Add/delete/replace surroundings (brackets, quotes, etc.)
 		--
 		-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
@@ -59,16 +61,16 @@ return { -- Collection of various small independent plugins/modules
 		require("mini.move").setup({
 			mappings = {
 				-- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
-				left = "<C-h>",
-				right = "<C-l>",
-				down = "<C-j>",
-				up = "<C-k>",
+				left = "<M-h>",
+				right = "<M-l>",
+				down = "<M-j>",
+				up = "<M-k>",
 
 				-- Move current line in Normal mode
-				line_left = "<C-h>",
-				line_right = "<C-l>",
-				line_down = "<C-j>",
-				line_up = "<C-k>",
+				line_left = "<M-h>",
+				line_right = "<M-l>",
+				line_down = "<M-j>",
+				line_up = "<M-k>",
 			},
 
 			-- Options which control moving behavior

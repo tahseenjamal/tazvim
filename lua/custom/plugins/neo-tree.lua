@@ -8,12 +8,12 @@ return {
 	},
 	cmd = "Neotree",
 	keys = {
-		{ "<leader>e", ":Neotree toggle<CR>", desc = "NeoTree toggle", silent = true },
+		{ "-", ":Neotree toggle<CR>", desc = "NeoTree toggle", silent = true },
 	},
 	opts = {
 		filesystem = {
 			window = {
-				position = "right",
+				position = "float",
 				width = 30,
 				border = "single",
 			},
